@@ -11,6 +11,7 @@ export type CodexPet = {
 };
 
 type PetDefinition = Omit<CodexPet, "image" | "sourceUrl">;
+const petAssetVersion = "20260716-gallery";
 
 const petDefinitions: PetDefinition[] = [
   { slug: "super-saiyan-goku-combat", name: "Super Saiyan Goku Combat", author: "datpham", format: "V2", tags: ["animated", "anime"] },
@@ -70,6 +71,6 @@ const petDefinitions: PetDefinition[] = [
 
 export const codexPets: CodexPet[] = petDefinitions.map((pet) => ({
   ...pet,
-  image: `/pet-gallery/${pet.slug}.webp`,
+  image: `/pet-gallery/${pet.slug}.webp?v=${petAssetVersion}`,
   sourceUrl: `https://codex-pets.net/#/pets/${pet.slug}`,
 }));

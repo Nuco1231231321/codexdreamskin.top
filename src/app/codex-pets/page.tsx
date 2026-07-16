@@ -208,7 +208,7 @@ export default function CodexPetsPage() {
           >
             <div className="row-span-2 grid min-h-[380px] place-items-center rounded-xl border-2 border-graphite border-b-[7px] bg-eel-light p-6">
               <Image
-                src="/pet-gallery/spinach.webp"
+                src="/pet-gallery/spinach.webp?v=20260716-gallery"
                 alt="Spinach cream-gold cat Codex pet"
                 width={192}
                 height={208}
@@ -219,7 +219,7 @@ export default function CodexPetsPage() {
             </div>
             <div className="grid min-h-[182px] place-items-center rounded-xl border-2 border-graphite border-b-[6px] bg-[#f7fbf4] p-4">
               <Image
-                src="/pet-gallery/mojo-apple.webp"
+                src="/pet-gallery/mojo-apple.webp?v=20260716-gallery"
                 alt="MOJO Apple Codex pet"
                 width={192}
                 height={208}
@@ -229,7 +229,7 @@ export default function CodexPetsPage() {
             </div>
             <div className="grid min-h-[182px] place-items-center rounded-xl border-2 border-graphite border-b-[6px] bg-[#edf9ff] p-4">
               <Image
-                src="/pet-gallery/aegis-sentinel.webp"
+                src="/pet-gallery/aegis-sentinel.webp?v=20260716-gallery"
                 alt="Aegis Sentinel Codex pet"
                 width={192}
                 height={208}
