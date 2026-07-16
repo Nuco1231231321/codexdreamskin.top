@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# codexdreamskin.top
 
-## Getting Started
+SEO-focused install and safety guide for the unofficial [Codex Dream Skin](https://github.com/Fei-Away/Codex-Dream-Skin) project, plus a curated Codex Pets gallery with prepared install links.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 App Router
+- React 19
+- Tailwind CSS 4
+- Static export for Cloudflare Pages
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+The static site is written to `out/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Cloudflare Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Build command: `npm run build`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Output directory: `out`
 
-## Deploy on Vercel
+Production domain: `https://codexdreamskin.top`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project includes Google Search Console verification, GA4 measurement ID `G-D5PHPQZHTL`, `robots.txt`, `sitemap.xml`, canonical metadata, Open Graph images, FAQ structured data, a same-domain installer mirror, and Cloudflare response headers.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Source policy
+
+Installation claims are checked against the upstream repository, platform docs, scripts, changelog, and public issues. Codex pet previews link to their original public listings, while X gallery examples link to the public posts used for commentary and discovery.
