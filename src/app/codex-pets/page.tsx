@@ -8,15 +8,16 @@ import {
 import type { Metadata } from "next";
 import Image from "next/image";
 
+import { PetBuilderGuide } from "@/components/pet-builder-guide";
 import { PetPicker } from "@/components/pet-picker";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { codexPets } from "@/lib/pets";
 
 export const metadata: Metadata = {
-  title: "Codex Pets: Free Desktop Pets for Codex",
+  title: "Codex Pets Gallery: 53 Free Desktop Pets",
   description:
-    "Browse free Codex Pets, choose a desktop pet, open a prepared Codex install task, copy the CLI fallback, and review safety guidance before installation.",
+    "Browse 53 free Codex Pets, install a desktop pet with a prepared Codex task and CLI fallback, or follow the V1 guide to make and publish your own.",
   keywords: [
     "Codex Pets",
     "Codex pet",
@@ -25,6 +26,8 @@ export const metadata: Metadata = {
     "free desktop pets",
     "Codex desktop pet",
     "how to get a desktop pet",
+    "how to make a desktop pet",
+    "desktop pet games",
   ],
   alternates: {
     canonical: "/codex-pets",
@@ -32,9 +35,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/codex-pets",
-    title: "Codex Pets: Free Desktop Pets for Codex",
+    title: "Codex Pets Gallery: 53 Free Desktop Pets",
     description:
-      "Choose a Codex desktop pet, open a prepared install task, and keep a CLI fallback ready.",
+      "Browse 53 desktop pets, install one in Codex, or build a custom V1 pet from the documented sprite format.",
     images: [
       {
         url: "/opengraph-image",
@@ -46,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Codex Pets: Free Desktop Pets for Codex",
+    title: "Codex Pets Gallery: 53 Free Desktop Pets",
     description:
-      "Browse a curated desktop pet gallery and open a prepared Codex installation task.",
+      "Browse 53 Codex desktop pets, install one, or follow the custom pet tutorial.",
     images: ["/opengraph-image"],
   },
 };
@@ -57,7 +60,7 @@ const petFaqItems = [
   {
     question: "What are Codex Pets?",
     answer:
-      "Codex Pets are small visual companions made to appear inside the Codex desktop experience. Each public pet listing has a name, creator, preview, and install slug. This page curates a small selection and prepares the published npx install command for the pet you choose.",
+      "Codex Pets are small visual companions made to appear inside the Codex desktop experience. Each public listing has a creator, preview, format, and install slug. This page curates 53 public listings and prepares the published npx install command for the pet you choose.",
   },
   {
     question: "How do I get a desktop pet in Codex?",
@@ -79,15 +82,20 @@ const petFaqItems = [
     answer:
       "No. This curated gallery does not accept uploads and does not require an account. Selecting a pet only changes the prepared install link and CLI command in your browser. Installation happens after you open Codex or run the command locally.",
   },
+  {
+    question: "How do I make my own Codex pet?",
+    answer:
+      "Use the V1 starter on this page. Replace the transparent 1536 x 1872 WebP sheet with nine rows of animation frames, edit pet.json, then use the public signed-in upload flow to validate and publish the package. V1 remains supported and has a fixed 8-column by 9-row format.",
+  },
 ];
 
 const collectionJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Codex Pets: Free Desktop Pets for Codex",
+  name: "Codex Pets Gallery: 53 Free Desktop Pets",
   url: "https://codexdreamskin.top/codex-pets",
   description:
-    "A curated gallery of Codex desktop pets with prepared installation links and CLI commands.",
+    "A curated gallery of 53 Codex desktop pets with prepared installation links, CLI commands, and a custom pet tutorial.",
   inLanguage: "en",
   mainEntity: {
     "@type": "ItemList",
@@ -162,20 +170,20 @@ export default function CodexPetsPage() {
         }}
       />
 
-      <SiteHeader ctaHref="#pet-gallery" ctaLabel="Choose a pet" />
+      <SiteHeader ctaHref="#pet-gallery" ctaLabel="Browse 53 pets" />
 
       <main>
         <section className="mx-auto grid min-h-[calc(100dvh-72px)] max-w-[1200px] items-center gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:py-12">
           <div>
             <p className="mb-4 text-sm font-black uppercase text-link">
-              Free desktop pets for Codex
+              53 free desktop pets for Codex
             </p>
             <h1 className="max-w-[17ch] text-balance text-5xl font-black leading-[1.05] text-eel-dark-blue sm:text-6xl lg:text-[56px]">
-              Install a Codex desktop pet in one click.
+              Find and install your Codex pet.
             </h1>
             <p className="mt-5 max-w-[44ch] text-pretty text-lg font-semibold leading-8 text-charcoal">
-              Choose a free desktop pet, open a prepared Codex task, and review
-              the install command before it runs.
+              Browse 53 public pets, open a prepared Codex task, or build your
+              own from the V1 starter.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -186,10 +194,10 @@ export default function CodexPetsPage() {
                 <ArrowDown aria-hidden="true" className="size-5" weight="bold" />
               </a>
               <a
-                href="#how-pets-work"
+                href="#create-codex-pet"
                 className="button-secondary inline-flex min-h-14 items-center justify-center px-6 font-black"
               >
-                How it works
+                Make your own
               </a>
             </div>
           </div>
@@ -200,7 +208,7 @@ export default function CodexPetsPage() {
           >
             <div className="row-span-2 grid min-h-[380px] place-items-center rounded-xl border-2 border-graphite border-b-[7px] bg-eel-light p-6">
               <Image
-                src="/pets/spinach.webp"
+                src="/pet-gallery/spinach.webp"
                 alt="Spinach cream-gold cat Codex pet"
                 width={192}
                 height={208}
@@ -211,22 +219,20 @@ export default function CodexPetsPage() {
             </div>
             <div className="grid min-h-[182px] place-items-center rounded-xl border-2 border-graphite border-b-[6px] bg-[#f7fbf4] p-4">
               <Image
-                src="/pets/mojo-apple.webp"
+                src="/pet-gallery/mojo-apple.webp"
                 alt="MOJO Apple Codex pet"
                 width={192}
                 height={208}
-                loading="eager"
                 sizes="(max-width: 1024px) 36vw, 180px"
                 className="max-h-[150px] w-auto object-contain"
               />
             </div>
             <div className="grid min-h-[182px] place-items-center rounded-xl border-2 border-graphite border-b-[6px] bg-[#edf9ff] p-4">
               <Image
-                src="/pets/aegis-sentinel.webp"
+                src="/pet-gallery/aegis-sentinel.webp"
                 alt="Aegis Sentinel Codex pet"
                 width={192}
                 height={208}
-                loading="eager"
                 sizes="(max-width: 1024px) 36vw, 180px"
                 className="max-h-[150px] w-auto object-contain"
               />
@@ -238,49 +244,52 @@ export default function CodexPetsPage() {
           id="how-pets-work"
           className="scroll-mt-24 border-y-2 border-eel-light bg-[#fbfff8]"
         >
-          <div className="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 lg:py-24">
-            <h2 className="max-w-[17ch] text-balance text-4xl font-black text-link sm:text-5xl">
-              How to get a desktop pet in Codex
-            </h2>
-            <p className="mt-4 max-w-[68ch] text-pretty text-lg leading-8 text-charcoal">
-              The shortest useful path has three parts: choose a public pet,
-              open a prepared Codex task, then inspect the exact command before
-              approving it. The website does not install software in the
-              background and does not ask for access to your Codex account.
-            </p>
+          <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:py-24">
+            <div>
+              <h2 className="max-w-[17ch] text-balance text-4xl font-black text-link sm:text-5xl">
+                How to get a desktop pet in Codex
+              </h2>
+              <p className="mt-4 max-w-[54ch] text-pretty text-lg leading-8 text-charcoal">
+                The website prepares the command. Codex or your trusted
+                terminal performs the installation only after you review it.
+              </p>
+            </div>
 
-            <div className="mt-10 grid border-y-2 border-graphite md:grid-cols-3">
+            <ol className="border-y-2 border-graphite">
               {[
                 [
-                  "Choose",
-                  "Search by pet name, creator, or visual type. Selecting a card updates the large preview and its exact install slug.",
+                  "Choose a verified slug",
+                  "Search the gallery by name, author, format, or style. Selecting a card updates the exact package slug in the install panel.",
                 ],
                 [
-                  "Open Codex",
-                  "Install in Codex uses the registered codex:// link to open a new task with the published npx command already prepared.",
+                  "Open the prepared task",
+                  "Install in Codex uses a codex:// link containing npx codex-pets add and the selected slug. Nothing runs in the page background.",
                 ],
                 [
-                  "Review and run",
-                  "Read the command before approval. If the custom link is unavailable, copy the same command and run it in a trusted terminal.",
+                  "Review before approval",
+                  "Read the command and package details. If the custom link does not open, copy the same CLI command into a trusted terminal.",
                 ],
               ].map(([title, body], index) => (
-                <article
+                <li
                   key={title}
-                  className={`py-6 md:px-6 ${
-                    index < 2
-                      ? "border-b-2 border-eel-light md:border-r-2 md:border-b-0"
-                      : ""
+                  className={`grid gap-4 py-6 sm:grid-cols-[52px_1fr] sm:gap-5 ${
+                    index < 2 ? "border-b-2 border-eel-light" : ""
                   }`}
                 >
-                  <h3 className="text-2xl font-black text-eel-dark-blue">
-                    {title}
-                  </h3>
-                  <p className="mt-3 text-pretty leading-7 text-charcoal">
-                    {body}
-                  </p>
-                </article>
+                  <span className="grid size-11 place-items-center rounded-xl border-2 border-action bg-eel-light font-black tabular-nums text-eel-dark-blue">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-2xl font-black text-eel-dark-blue">
+                      {title}
+                    </h3>
+                    <p className="mt-2 text-pretty leading-7 text-charcoal">
+                      {body}
+                    </p>
+                  </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
 
@@ -290,19 +299,26 @@ export default function CodexPetsPage() {
         >
           <div className="mb-10 max-w-3xl">
             <h2 className="text-balance text-4xl font-black text-eel-dark-blue sm:text-5xl">
-              Choose your Codex pet
+              Browse all 53 Codex pets
             </h2>
             <p className="mt-4 text-pretty text-lg leading-8 text-charcoal">
-              This launch collection includes animals, developer characters,
-              fantasy mascots, and a playful object. Uploads are not enabled,
-              so every option below can be reviewed before the install path is
-              shown.
+              Filter public V1 and V2 listings by name, creator, style, or
+              format. Every card uses a real published slug and opens the same
+              prepared installation flow.
             </p>
           </div>
           <PetPicker />
+          <p className="mt-6 text-pretty text-xs font-bold leading-5 text-ash">
+            Pet names, artwork, and character rights remain with their creators
+            and respective owners. Preview copies are shown for package
+            discovery. Open the linked package details for source context and
+            current attribution.
+          </p>
         </section>
 
-        <section className="border-y-2 border-eel-light bg-[#fbfff8]">
+        <PetBuilderGuide />
+
+        <section className="border-b-2 border-eel-light bg-white">
           <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:py-24">
             <div>
               <PawPrint
@@ -318,25 +334,14 @@ export default function CodexPetsPage() {
               <p>
                 A desktop pet is a small animated or illustrated companion that
                 stays near your work instead of taking over the whole screen.
-                Traditional desktop pets often walk across the desktop, react
-                to clicks, or idle beside open windows. Codex Pets adapts that
-                familiar idea to the Codex workflow by packaging a pet under a
-                short install slug.
+                Codex Pets packages that companion under a short install slug,
+                with visual states for idle, movement, waiting, review, and
+                other actions.
               </p>
               <p>
-                The practical value is atmosphere, not productivity claims. A
-                cat, dog, mascot, or developer character can make long coding
-                sessions feel more personal, but it should not hide important
-                controls or distract from review. Choose a design that remains
-                recognizable at a small size and fits the way you use Codex.
-              </p>
-              <p>
-                People searching for free desktop pets usually want three
-                things: a preview before download, a simple installation path,
-                and a clear way to remove or replace the pet. This page focuses
-                on the first two today. The original pet page is linked from
-                every selected item so you can inspect its public listing and
-                any current package details.
+                A pet changes atmosphere, not the quality of generated code.
+                Pick artwork that stays readable at a small size, does not hide
+                controls, and comes from a package you have reviewed.
               </p>
             </div>
           </div>

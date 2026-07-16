@@ -10,58 +10,87 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 
 import { CopyCommand } from "@/components/copy-command";
-import { codexPets, type PetCategory } from "@/lib/pets";
+import { codexPets, type PetFormat } from "@/lib/pets";
+import { cn } from "@/lib/utils";
 
-const petFilters: Array<"All" | PetCategory> = [
+const initialVisibleCount = 18;
+const formatFilters: Array<"All" | PetFormat> = ["All", "V2", "V1"];
+const tagFilters = [
   "All",
-  "Animal",
-  "Character",
-  "Object",
-];
+  "cute",
+  "anime",
+  "pixel",
+  "game",
+  "mascot",
+  "animated",
+] as const;
+
+type TagFilter = (typeof tagFilters)[number];
+type SortOrder = "featured" | "name";
 
 export function PetPicker() {
   const [query, setQuery] = useState("");
-  const [activeFilter, setActiveFilter] =
-    useState<(typeof petFilters)[number]>("All");
+  const [formatFilter, setFormatFilter] =
+    useState<(typeof formatFilters)[number]>("All");
+  const [tagFilter, setTagFilter] = useState<TagFilter>("All");
+  const [sortOrder, setSortOrder] = useState<SortOrder>("featured");
   const [selectedSlug, setSelectedSlug] = useState(codexPets[0].slug);
+  const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   const filteredPets = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
-
-    return codexPets.filter((pet) => {
-      const matchesCategory =
-        activeFilter === "All" || pet.category === activeFilter;
+    const matches = codexPets.filter((pet) => {
+      const matchesFormat =
+        formatFilter === "All" || pet.format === formatFilter;
+      const matchesTag =
+        tagFilter === "All" || pet.tags.includes(tagFilter.toLowerCase());
+      const searchText = `${pet.name} ${pet.author} ${pet.slug} ${pet.tags.join(" ")}`;
       const matchesQuery =
         normalizedQuery.length === 0 ||
-        `${pet.name} ${pet.author} ${pet.description}`
-          .toLowerCase()
-          .includes(normalizedQuery);
+        searchText.toLowerCase().includes(normalizedQuery);
 
-      return matchesCategory && matchesQuery;
+      return matchesFormat && matchesTag && matchesQuery;
     });
-  }, [activeFilter, query]);
+
+    if (sortOrder === "name") {
+      return [...matches].sort((firstPet, secondPet) =>
+        firstPet.name.localeCompare(secondPet.name),
+      );
+    }
+
+    return matches;
+  }, [formatFilter, query, sortOrder, tagFilter]);
 
   const selectedPet =
     codexPets.find((pet) => pet.slug === selectedSlug) ?? codexPets[0];
+  const visiblePets = filteredPets.slice(0, visibleCount);
   const installCommand = `npx codex-pets add ${selectedPet.slug}`;
   const installPrompt = `Install this pet: ${installCommand}`;
   const installHref = `codex://new?prompt=${encodeURIComponent(installPrompt)}`;
+  const hasMorePets = visiblePets.length < filteredPets.length;
+
+  function resetVisibleCount() {
+    setVisibleCount(initialVisibleCount);
+  }
 
   function clearFilters() {
     setQuery("");
-    setActiveFilter("All");
+    setFormatFilter("All");
+    setTagFilter("All");
+    setSortOrder("featured");
+    resetVisibleCount();
   }
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-start">
+    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
       <div className="min-w-0">
-        <div className="grid gap-4 rounded-xl border-2 border-graphite p-4 sm:grid-cols-[1fr_auto] sm:items-end sm:p-5">
+        <div className="grid gap-4 rounded-xl border-2 border-graphite bg-[#fbfff8] p-4 sm:p-5">
           <div>
             <label
               htmlFor="pet-search"
               className="text-sm font-black text-eel-dark-blue"
             >
-              Search the pet gallery
+              Search 53 Codex pets
             </label>
             <div className="mt-2 flex min-h-12 items-center gap-2 rounded-xl border-2 border-graphite bg-white px-3 focus-within:border-action focus-within:outline-3 focus-within:outline-offset-2 focus-within:outline-eel-dark-blue">
               <MagnifyingGlass
@@ -73,89 +102,171 @@ export function PetPicker() {
                 id="pet-search"
                 type="search"
                 value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Try cat, dog, apple, or author"
+                onChange={(event) => {
+                  setQuery(event.target.value);
+                  resetVisibleCount();
+                }}
+                placeholder="Search cat, anime, pixel, author, or slug"
                 className="min-w-0 flex-1 bg-transparent py-2 font-bold text-eel-dark-blue outline-none placeholder:text-ash"
               />
             </div>
           </div>
 
-          <div aria-label="Filter pets by type" className="flex flex-wrap gap-2">
-            {petFilters.map((filter) => (
-              <button
-                key={filter}
-                type="button"
-                aria-pressed={activeFilter === filter}
-                onClick={() => setActiveFilter(filter)}
-                className="pet-filter min-h-11 rounded-xl border-2 border-graphite px-3 text-sm font-black text-charcoal"
+          <div className="grid gap-4 sm:grid-cols-[auto_1fr_1fr] sm:items-end">
+            <fieldset>
+              <legend className="text-sm font-black text-eel-dark-blue">
+                Format
+              </legend>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {formatFilters.map((filter) => (
+                  <button
+                    key={filter}
+                    type="button"
+                    aria-pressed={formatFilter === filter}
+                    onClick={() => {
+                      setFormatFilter(filter);
+                      resetVisibleCount();
+                    }}
+                    className="pet-filter min-h-11 rounded-xl border-2 border-graphite px-3 text-sm font-black text-charcoal"
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
+
+            <div className="grid gap-2">
+              <label
+                htmlFor="pet-tag-filter"
+                className="text-sm font-black text-eel-dark-blue"
               >
-                {filter}
-              </button>
-            ))}
+                Style
+              </label>
+              <select
+                id="pet-tag-filter"
+                value={tagFilter}
+                onChange={(event) => {
+                  setTagFilter(event.target.value as TagFilter);
+                  resetVisibleCount();
+                }}
+                className="min-h-11 rounded-xl border-2 border-graphite bg-white px-3 font-bold text-eel-dark-blue outline-none focus:border-action focus:outline-3 focus:outline-offset-2 focus:outline-eel-dark-blue"
+              >
+                {tagFilters.map((tag) => (
+                  <option key={tag} value={tag}>
+                    {tag === "All"
+                      ? "All styles"
+                      : tag.charAt(0).toUpperCase() + tag.slice(1)}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="grid gap-2">
+              <label
+                htmlFor="pet-sort"
+                className="text-sm font-black text-eel-dark-blue"
+              >
+                Sort
+              </label>
+              <select
+                id="pet-sort"
+                value={sortOrder}
+                onChange={(event) => {
+                  setSortOrder(event.target.value as SortOrder);
+                  resetVisibleCount();
+                }}
+                className="min-h-11 rounded-xl border-2 border-graphite bg-white px-3 font-bold text-eel-dark-blue outline-none focus:border-action focus:outline-3 focus:outline-offset-2 focus:outline-eel-dark-blue"
+              >
+                <option value="featured">Newest listings</option>
+                <option value="name">Name A-Z</option>
+              </select>
+            </div>
           </div>
         </div>
 
-        <p aria-live="polite" className="mt-4 text-sm font-bold text-ash">
-          Showing {filteredPets.length} of {codexPets.length} curated Codex pets.
+        <p
+          aria-live="polite"
+          className="mt-4 text-sm font-bold tabular-nums text-ash"
+        >
+          Showing {visiblePets.length} of {filteredPets.length} matches from {" "}
+          {codexPets.length} public pet listings.
         </p>
 
         {filteredPets.length > 0 ? (
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            {filteredPets.map((pet) => {
-              const isSelected = selectedPet.slug === pet.slug;
+          <>
+            <div
+              id="pet-results"
+              className="mt-5 grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-3"
+            >
+              {visiblePets.map((pet) => {
+                const isSelected = selectedPet.slug === pet.slug;
 
-              return (
-                <article
-                  key={pet.slug}
-                  id={pet.slug}
-                  className={
-                    isSelected
-                      ? "rounded-xl border-2 border-action border-b-[6px] bg-[#fbfff8] p-3"
-                      : "rounded-xl border-2 border-graphite border-b-[6px] bg-white p-3"
-                  }
-                >
-                  <button
-                    type="button"
-                    aria-pressed={isSelected}
-                    aria-label={`Select ${pet.name}`}
-                    onClick={() => setSelectedSlug(pet.slug)}
-                    className="group grid w-full grid-cols-[104px_1fr] gap-4 text-left"
+                return (
+                  <article
+                    key={pet.slug}
+                    id={pet.slug}
+                    className={cn(
+                      "rounded-xl border-2 border-b-[6px] bg-white p-2.5",
+                      isSelected
+                        ? "border-action bg-[#fbfff8]"
+                        : "border-graphite",
+                    )}
                   >
-                    <span className="grid min-h-[118px] place-items-center rounded-xl border-2 border-eel-light bg-[#f7fbf4] p-2 group-hover:border-action">
-                      <Image
-                        src={pet.image}
-                        alt={`${pet.name} Codex desktop pet preview`}
-                        width={192}
-                        height={208}
-                        sizes="104px"
-                        className="max-h-[108px] w-auto object-contain"
-                      />
-                    </span>
-                    <span className="min-w-0 py-1">
-                      <span className="flex items-start justify-between gap-2">
-                        <span className="text-lg font-black text-eel-dark-blue">
-                          {pet.name}
+                    <button
+                      type="button"
+                      aria-pressed={isSelected}
+                      onClick={() => setSelectedSlug(pet.slug)}
+                      className="group grid w-full gap-3 text-left"
+                    >
+                      <span className="grid min-h-[132px] place-items-center rounded-xl border-2 border-eel-light bg-[#f7fbf4] p-2 group-hover:border-action sm:min-h-[150px]">
+                        <Image
+                          src={pet.image}
+                          alt=""
+                          width={192}
+                          height={208}
+                          sizes="(max-width: 639px) 42vw, (max-width: 1279px) 220px, 190px"
+                          className="max-h-[128px] w-auto object-contain sm:max-h-[144px]"
+                        />
+                      </span>
+                      <span className="min-w-0 px-1 pb-1">
+                        <span className="flex items-start justify-between gap-2">
+                          <span className="line-clamp-2 text-base font-black leading-5 text-eel-dark-blue sm:text-lg sm:leading-6">
+                            {pet.name}
+                          </span>
+                          {isSelected ? (
+                            <Sparkle
+                              aria-hidden="true"
+                              className="mt-0.5 size-5 shrink-0 text-action"
+                              weight="fill"
+                            />
+                          ) : null}
                         </span>
-                        {isSelected ? (
-                          <Sparkle
-                            aria-hidden="true"
-                            className="mt-1 size-5 shrink-0 text-action"
-                            weight="fill"
-                          />
-                        ) : null}
+                        <span className="mt-1 block truncate text-xs font-extrabold text-ash">
+                          by {pet.author}
+                        </span>
+                        <span className="mt-2 block text-xs font-black text-link">
+                          {pet.format}
+                          {pet.tags.length > 0
+                            ? ` | ${pet.tags.slice(0, 2).join(", ")}`
+                            : " | community pet"}
+                        </span>
                       </span>
-                      <span className="mt-1 block text-xs font-extrabold text-ash">
-                        by {pet.author} | {pet.category}
-                      </span>
-                      <span className="mt-2 block text-pretty text-sm leading-5 text-charcoal">
-                        {pet.description}
-                      </span>
-                    </span>
-                  </button>
-                </article>
-              );
-            })}
-          </div>
+                    </button>
+                  </article>
+                );
+              })}
+            </div>
+
+            {hasMorePets ? (
+              <button
+                type="button"
+                onClick={() => setVisibleCount(filteredPets.length)}
+                className="button-secondary mx-auto mt-8 flex min-h-12 items-center justify-center px-6 font-black"
+              >
+                Show all {filteredPets.length - visiblePets.length} more pets
+              </button>
+            ) : null}
+          </>
         ) : (
           <div className="mt-5 rounded-xl border-2 border-graphite p-8 text-center">
             <PawPrint
@@ -163,12 +274,12 @@ export function PetPicker() {
               className="mx-auto size-11 text-action"
               weight="fill"
             />
-            <h3 className="mt-4 text-2xl font-black text-eel-dark-blue">
-              No pets match that search.
+            <h3 className="mt-4 text-balance text-2xl font-black text-eel-dark-blue">
+              No pets match those filters.
             </h3>
             <p className="mt-2 text-pretty text-charcoal">
-              Clear the search and filters to return to the full desktop pet
-              gallery.
+              Reset the search, format, and style controls to reopen the full
+              desktop pet gallery.
             </p>
             <button
               type="button"
@@ -183,9 +294,9 @@ export function PetPicker() {
 
       <aside
         aria-label="Selected Codex pet installation"
-        className="min-w-0 rounded-xl border-2 border-graphite border-b-[7px] bg-eel-light p-5 lg:sticky lg:top-24 sm:p-6"
+        className="order-first min-w-0 rounded-xl border-2 border-graphite border-b-[7px] bg-eel-light p-5 sm:p-6 lg:order-none lg:sticky lg:top-24"
       >
-        <div className="grid place-items-center rounded-xl border-2 border-action bg-white p-5">
+        <div className="grid place-items-center rounded-xl border-2 border-action bg-white p-4">
           <Image
             src={selectedPet.image}
             alt={`${selectedPet.name} selected desktop pet`}
@@ -195,13 +306,15 @@ export function PetPicker() {
             className="h-[208px] w-[192px] object-contain"
           />
         </div>
-        <p className="mt-5 text-sm font-black text-link">Selected pet</p>
+        <p className="mt-5 text-sm font-black text-link">
+          {selectedPet.format} pet by {selectedPet.author}
+        </p>
         <h3 className="mt-1 text-balance text-3xl font-black text-eel-dark-blue">
           {selectedPet.name}
         </h3>
         <p className="mt-3 text-pretty leading-7 text-eel-dark-blue">
-          {selectedPet.description} The one-click link opens Codex with a
-          prepared task. Review the command before approving it.
+          This listing uses the published slug {selectedPet.slug}. The link
+          below opens Codex with the exact install command prepared for review.
         </p>
 
         <a
@@ -230,9 +343,9 @@ export function PetPicker() {
           href={selectedPet.sourceUrl}
           target="_blank"
           rel="noreferrer"
-          className="mt-3 inline-flex items-center gap-2 font-extrabold text-link underline decoration-2 underline-offset-4"
+          className="mt-2 inline-flex items-center gap-2 font-extrabold text-link underline decoration-2 underline-offset-4"
         >
-          View the original pet page
+          Review package details
           <ArrowSquareOut aria-hidden="true" className="size-4" weight="bold" />
         </a>
       </aside>

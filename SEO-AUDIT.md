@@ -1,161 +1,180 @@
 # SEO Audit: codexdreamskin.top
 
 Audit date: July 16, 2026  
-Scope: production static export before deployment
+Scope: expanded `/codex-pets` release before production redeployment
 
 ## 1. Executive summary
 
-Overall health: ready to deploy.
+Overall health: ready to redeploy.
 
-The site has a crawlable static architecture, unique metadata, matching canonicals and Open Graph URLs, a valid sitemap, a permissive robots file, descriptive internal links, rendered structured data, accessible interactive controls, and enough original explanatory content to satisfy the install intent without padding.
+The expanded site preserves the crawlable Next.js static architecture and adds substantially more product utility without changing the canonical route. `/codex-pets` now contains a 53-item public pet library, real creator attribution, search and filters, prepared `codex://` installation links, CLI fallbacks, a documented V1 creation tutorial, a downloadable starter ZIP, safety guidance, and six matching FAQ answers.
 
-Highest-impact items completed:
+Highest-impact improvements completed:
 
-- Added the dedicated `/codex-pets` landing page around the new `Codex Pets` topic and the established `desktop pets` search demand.
-- Replaced homepage GitHub install paths with a same-domain ZIP mirror and published its SHA-256 checksum.
-- Added the pet gallery, search, category filtering, prepared `codex://` links, CLI fallbacks, creator attribution, safety guidance, FAQs, and X source links.
-- Corrected child-page Open Graph URLs so they match their canonicals.
-- Converted large screenshots from PNG to WebP and reduced the homepage LCP asset from roughly 716 KB to roughly 40 KB.
-- Fixed heading contrast. Lighthouse accessibility is now 100 on both primary pages.
+- Increased the installable gallery from 8 to 53 unique public Codex Pets.
+- Stored all 53 previews locally as compressed WebP assets to avoid runtime hotlink failure.
+- Added one-click gallery expansion, name search, V1/V2 filtering, style filtering, A-Z sorting, selection state, and a sticky install panel.
+- Added a tested custom-pet workflow for `how to make a desktop pet`: exact atlas size, cell size, row order, valid manifest fields, validator link, and starter ZIP.
+- Updated title, description, keywords, Open Graph, Twitter, FAQ content, and CollectionPage ItemList to match the expanded page.
+- Preserved the canonical URL, sitemap route, analytics tag, Search Console verification, and existing internal links.
 
-Remaining launch dependencies:
+Current priorities:
 
-- Deploy the current `out/` directory over HTTPS.
-- Confirm the apex domain resolves to the deployed Cloudflare Pages project.
-- Submit `https://codexdreamskin.top/sitemap.xml` in Google Search Console after the live URL responds.
-- Request indexing for `/` and `/codex-pets` after live verification.
+1. Push and deploy the expanded build.
+2. Re-run live URL checks after Cloudflare publishes the new assets.
+3. Request indexing for `/codex-pets` after the new release is live.
 
 ## 2. Keyword and intent decision
 
-Target market: United States, English. The new topic has limited exact-match paid-tool history, so the page uses a two-layer strategy: `Codex Pets` for the emerging entity and `desktop pets` for proven category demand.
+Target market: United States, English. The page combines the emerging entity `Codex Pets` with established desktop-pet demand and tested long-tail utility.
 
-| keyword | search_volume | intitle | kgr | kd | cpc | trends | eeat_status | est_length | decision |
-|---|---:|---:|---:|---:|---:|---|---|---:|---|
-| Codex Pets | no separate SEMrush estimate | not reliable | n/a | n/a | n/a | rising | pass | 900-1400 | build_now |
-| desktop pets | 2,400 US | 3,280 | 1.37 | 41 | n/a | stable | pass | 1000-1600 | build_now as secondary intent |
-| desktop pet | 1,900 US / 8,000 global | 19,300 | 10.16 | 44 | $0.41 | stable | pass | 1200-1800 | queue for a broader guide |
-| how to get a desktop pet | 20 US | 8 | 0.40 | n/a | n/a | stable | pass | 800-1100 | build_now as a page section |
-| how to make a desktop pet | 90 US | 10 | 0.11 | 22 | n/a | stable | partial | 1200-1800 | queue until creation tools exist |
-| desktop pet games | 720 US | not collected | n/a | 31 | n/a | stable | partial | 1200-1800 | drop for this page due to intent mismatch |
-| are desktop pets safe | 20 US | unreliable result count | n/a | n/a | n/a | stable | pass | 700-1000 | build_now as safety section and FAQ |
+| keyword | search_volume | intitle | kgr | kd | cpc | intent fit | decision |
+|---|---:|---:|---:|---:|---:|---|---|
+| Codex Pets | no separate SEMrush estimate | not reliable | n/a | n/a | n/a | exact product/entity | build_now |
+| desktop pets | 2,400 US | 3,280 | 1.37 | 41 | n/a | category discovery | build_now as secondary |
+| desktop pet | 1,900 US / 8,000 global | 19,300 | 10.16 | 44 | $0.41 | broad category | support naturally |
+| desktop pet games | 720 US | not collected | n/a | 31 | n/a | partially related | do not make primary |
+| how to make a desktop pet | 90 US | 10 | 0.11 | 22 | n/a | creation tutorial | build_now |
+| how to get a desktop pet | 20 US | 8 | 0.40 | n/a | n/a | installation tutorial | build_now |
+| are desktop pets safe | 20 US | unreliable | n/a | n/a | n/a | safety reassurance | build_now |
 
-Top build-now picks:
+Keyword mapping:
 
-1. `Codex Pets`: first-mover entity page with direct product utility, real previews, and creator attribution.
-2. `desktop pets`: strong category demand that naturally describes what Codex Pets are, despite higher competition.
-3. `how to get a desktop pet`: workable long-tail intent that matches the choose, open, review, and run flow.
+- `/codex-pets`: `Codex Pets`, `desktop pets`, `free desktop pets`, `how to get a desktop pet`, `how to make a desktop pet`, `are desktop pets safe`.
+- `/`: `Codex Dream Skin`, `Codex skin`, `Codex desktop theme`, `change Codex theme`.
 
-Biggest keyword risks:
-
-- Exact `Codex Pets` volume is not yet established in SEMrush, so early performance depends on trend capture and fast indexing.
-- `desktop pet` and `desktop pets` are competitive category terms. The page needs links and topical authority before category rankings are realistic.
-- Creation intent should not be targeted until the site actually supports making or uploading pets.
+There is no material cannibalization because the homepage targets desktop theme replacement while `/codex-pets` targets companions, installation, and package creation.
 
 ## 3. Technical SEO findings
 
 ### Crawlability and indexation
 
-- Status: pass.
-- Evidence: `robots.txt` allows all crawlers and references the canonical sitemap.
-- Evidence: `sitemap.xml` contains only the four public canonical pages: `/`, `/codex-pets`, `/about`, and `/privacy`.
-- Evidence: all important pages are linked from the shared header or footer and are within one click of the homepage.
-- Evidence: the static export produces an HTML document for every public route.
+- Issue: no blocking crawl directive found.
+- Impact: High.
+- Evidence: `robots.txt` allows crawling and references the canonical sitemap; `sitemap.xml` includes `/`, `/codex-pets`, `/about`, and `/privacy`.
+- Fix: none required.
+- Priority: pass.
 
-### Canonical and social URL consistency
+### Canonical and metadata consistency
 
-- Status: pass after fix.
-- Evidence: title, description, canonical, and `og:url` now agree on every public page.
-- Evidence: `/codex-pets` has its own keyword-aligned title, description, canonical, Open Graph values, and Twitter values.
+- Issue: none found.
+- Impact: High.
+- Evidence: `/codex-pets` title, description, canonical, `og:url`, Open Graph title, and Twitter title all describe the same 53-item gallery page.
+- Fix: none required.
+- Priority: pass.
 
-### Mobile and accessibility
+### Mobile layout and accessibility
 
-- Status: pass.
-- Evidence: Chrome testing at 390 px reported a 390 px document width with no horizontal overflow on `/` or `/codex-pets`.
-- Evidence: pet search, filters, selection buttons, install link, tabs, details elements, and copy status are keyboard-readable native controls.
-- Evidence: Lighthouse accessibility score is 100 for both primary pages.
+- Issue: a tutorial grid initially caused horizontal overflow at 390 px and was fixed before release.
+- Impact: High.
+- Evidence: final Chrome measurement reports `clientWidth: 390`, `scrollWidth: 390`, and `bodyScrollWidth: 390`.
+- Fix: added `min-w-0` to both tutorial grid columns and their parent.
+- Priority: complete.
 
 ### Performance and Core Web Vitals
 
-- Status: pass in local Cloudflare Pages simulation.
-- Homepage Lighthouse: Performance 99, Accessibility 100, Best Practices 100, SEO 100, LCP 2.0 s, CLS 0, TBT 50 ms.
-- Codex Pets Lighthouse: Performance 100, Accessibility 100, Best Practices 100, SEO 100, LCP 1.9 s, CLS 0, TBT 50 ms.
-- Evidence: images reserve dimensions, below-fold images lazy-load, and the primary screenshot is a small WebP asset.
+- Issue: the first expanded build rendered all 53 cards immediately and scored 86 on mobile performance.
+- Impact: High.
+- Evidence: excessive initial DOM size and uncompressed preview images increased rendering time.
+- Fix: render 18 cards initially, provide one-click expansion to all 53, remove unnecessary eager image loads, and compress all local previews.
+- Priority: complete.
 
-### Security and downloads
+Final local Cloudflare Pages simulation:
 
-- Status: pass for launch scope.
-- Evidence: Cloudflare headers include `X-Content-Type-Options`, a strict referrer policy, and a restrictive permissions policy.
-- Evidence: the ZIP is served as `application/zip` with `Content-Disposition: attachment`.
-- Evidence: the served ZIP passed archive validation and matched SHA-256 `2a54b8f7b6474b22587b7692395c76dd0fc9acce27007482f42df827ccb42251`.
+- Desktop: Performance 100, Accessibility 100, Best Practices 100, SEO 100, LCP 0.6 s, CLS 0.001, TBT 0 ms.
+- Mobile: Performance 96, Accessibility 100, Best Practices 100, SEO 100, LCP 2.5 s, CLS 0, TBT 110 ms.
+
+### Static hosting and downloads
+
+- Issue: none found.
+- Impact: Medium.
+- Evidence: Next.js produces a static HTML file for every public route. The V1 starter ZIP contains `pet.json`, `spritesheet.webp`, and a README with the verified row contract.
+- Fix: none required.
+- Priority: pass.
 
 ## 4. On-page SEO findings
 
-### Titles and descriptions
+### Title and description
 
-- Status: pass.
-- Homepage title: 47 characters.
-- Codex Pets title: 58 characters.
-- Homepage description: 144 characters.
-- Codex Pets description: 152 characters.
-- Every public page has one unique title and one unique description.
+- Issue: none found.
+- Impact: High.
+- Evidence: rendered title is 59 characters including the brand; description is 146 characters; both begin with the page topic and describe the install and creation value.
+- Fix: none required.
+- Priority: pass.
 
-### Headings and keyword targeting
+### Headings and visible content
 
-- Status: pass.
-- Every public page has exactly one H1.
-- `/codex-pets` uses `Codex Pets`, `desktop pet`, `desktop pets`, `free desktop pets`, `how to get a desktop pet`, and `are desktop pets safe` in natural, intent-matched locations.
-- The homepage remains focused on `Codex Dream Skin`, `Codex skin`, `Codex desktop theme`, and platform installation.
-- There is no meaningful keyword cannibalization between the homepage and pet page.
+- Issue: none found.
+- Impact: High.
+- Evidence: the page has one H1, logical H2/H3 hierarchy, and approximately 1,401 visible words after scripts and styles are removed.
+- Fix: none required.
+- Priority: pass.
 
-### Content quality and trust
+### Gallery usefulness
 
-- Status: pass.
-- Homepage visible copy: approximately 1,358 English words.
-- Codex Pets visible copy: approximately 1,137 English words.
-- Claims are bounded: the one-click link is described as opening a prepared Codex task, not silently installing software.
-- Real pet previews, creator names, original pet links, X source links, safety guidance, privacy information, and the package checksum provide Experience and Trust signals.
-- No ratings, review counts, prices, or performance claims were invented.
+- Issue: the original 8-item gallery was too small for material discovery intent.
+- Impact: High.
+- Evidence: the new library contains 53 unique slugs, 53 local previews, public creator names, V1/V2 labels, tags, source-detail links, prepared install links, and CLI commands.
+- Fix: complete.
+- Priority: complete.
+
+### Creation tutorial
+
+- Issue: the previous page did not satisfy `how to make a desktop pet` intent.
+- Impact: High.
+- Evidence: the page now documents the V1 1536 x 1872 atlas, 192 x 208 cells, 8 columns, 9 ordered animation rows, valid manifest fields, public validation flow, and post-publication install command.
+- Fix: complete.
+- Priority: complete.
 
 ### Structured data
 
-- Status: pass.
-- Homepage renders `WebSite` and `FAQPage` JSON-LD.
-- `/codex-pets` renders `CollectionPage`, `ItemList`, and `FAQPage` JSON-LD.
-- Structured data matches visible content and uses real page URLs and item names.
+- Issue: none found.
+- Impact: Medium.
+- Evidence: rendered JSON-LD includes a CollectionPage, a 53-item ItemList, and six FAQ questions that match visible page content.
+- Fix: none required.
+- Priority: pass.
 
-### Images and internal links
+### Images and attribution
 
-- Status: pass.
-- Meaningful images have descriptive alt text and fixed dimensions.
-- Pet preview files and community gallery images are served from the same domain.
-- Internal links use descriptive anchors such as `Browse Codex Pets`, `Open the pet gallery`, and `Dream Skin`.
-- Automated checking found no local asset or internal-link response at 400 or above.
+- Issue: community artwork must retain clear attribution and rights boundaries.
+- Impact: Medium.
+- Evidence: cards show creator names, selected items link to public package details, and X screenshots link to their original posts.
+- Fix: keep attribution and source links whenever the collection changes; remove an asset if its public source disappears or a valid takedown request is received.
+- Priority: ongoing.
 
-## 5. Prioritized action plan
+## 5. Content quality and E-E-A-T
 
-### Critical before launch
+- Experience: real browser-tested install links, filters, responsive behavior, starter archive, and command-copy fallbacks.
+- Expertise: exact public V1 sprite dimensions, state order, manifest validation fields, and package filenames.
+- Authoritativeness: creator names and public source pages are retained instead of replacing them with invented profiles.
+- Trust: safety warnings, rights boundaries, HTTPS, privacy page, source details, and explicit review-before-run language.
+- Accuracy: no invented search volume, rankings, ratings, download totals, prices, or performance claims appear on the page.
 
-1. Push the tested commit to the repository.
-2. Deploy `out/` to the Cloudflare Pages project.
-3. Bind `codexdreamskin.top` and confirm the apex HTTPS response.
-4. Verify the live Google site-verification meta tag and GA4 tag.
+## 6. Prioritized action plan
 
-### High impact after launch
+### Critical
 
-1. Submit the sitemap and request indexing for `/` and `/codex-pets`.
-2. Monitor Search Console impressions for `codex pets`, `desktop pets`, and `how to get a desktop pet`.
-3. Update pet metadata and the sitemap modification date when the curated collection materially changes.
+1. Deploy the expanded static export to the existing Cloudflare Pages project.
+2. Confirm the live page serves all 53 preview assets and the starter ZIP with HTTP 200.
+3. Request Google indexing for `https://codexdreamskin.top/codex-pets` after deployment.
 
-### Longer-term opportunities
+### High impact
 
-1. Add individual indexable pet detail pages only after the site can provide unique instructions, compatibility notes, and removal guidance for each pet.
-2. Build a separate `how to make a desktop pet` guide only when a real creation workflow can be tested and demonstrated.
-3. Earn relevant links from Codex customization discussions and desktop-pet communities without duplicating thin gallery pages.
+1. Monitor Search Console queries for `codex pets`, `desktop pets`, `how to get a desktop pet`, and `how to make a desktop pet`.
+2. Refresh the gallery when public listings materially change, but keep the route and canonical stable.
+3. Add individual indexable pet pages only when each can offer unique compatibility, removal, and creator information.
 
-## 6. References and tool notes
+### Longer term
+
+1. Add a first-party in-browser sprite validator only after it can enforce the same package contract reliably.
+2. Add a visible takedown contact if the gallery grows beyond manual curation.
+3. Earn links from relevant Codex customization and desktop-pet discussions without publishing thin duplicate galleries.
+
+## 7. References and tool notes
 
 - SEMrush US database, checked July 16, 2026.
-- Google `intitle` checks, treated as rough competition signals rather than exact index counts.
-- Chrome desktop and 390 px responsive testing.
-- Lighthouse against a local Cloudflare Pages simulation using the production static export.
-- Next.js 16 static export and Metadata API output inspected directly in generated HTML.
+- Public Codex Pets gallery and package-detail pages, checked in Chrome.
+- Public package validation and animation configuration in the referenced project source.
+- Chrome desktop interaction testing and 390 x 844 responsive testing.
+- Lighthouse 12.8.2 against the production static export in local Cloudflare Pages simulation.
+- Generated HTML inspected for metadata, canonical, verification, JSON-LD, word count, and image paths.

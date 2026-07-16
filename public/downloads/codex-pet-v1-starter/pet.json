@@ -1,0 +1,7 @@
+{
+  "id": "my-codex-pet",
+  "displayName": "My Codex Pet",
+  "description": "A custom companion for my Codex desktop.",
+  "spritesheetPath": "spritesheet.webp",
+  "kind": "creature"
+}
