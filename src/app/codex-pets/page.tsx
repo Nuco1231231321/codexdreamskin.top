@@ -215,6 +215,7 @@ export default function CodexPetsPage() {
                 alt="MOJO Apple Codex pet"
                 width={192}
                 height={208}
+                loading="eager"
                 sizes="(max-width: 1024px) 36vw, 180px"
                 className="max-h-[150px] w-auto object-contain"
               />
@@ -225,6 +226,7 @@ export default function CodexPetsPage() {
                 alt="Aegis Sentinel Codex pet"
                 width={192}
                 height={208}
+                loading="eager"
                 sizes="(max-width: 1024px) 36vw, 180px"
                 className="max-h-[150px] w-auto object-contain"
               />
