@@ -15,6 +15,9 @@
 /pets/*
   Cache-Control: public, max-age=2592000
 
+/pet-gallery/*
+  Cache-Control: public, max-age=2592000
+
 /x-gallery/*
   Cache-Control: public, max-age=2592000
 

@@ -1,36 +1,36 @@
 import Link from "next/link";
 
+import { CookieSettingsButton } from "@/components/cookie-settings-button";
+
 export function SiteFooter() {
   return (
     <footer className="border-t-2 border-graphite">
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-5 px-4 py-8 text-sm font-bold text-charcoal sm:px-6 md:flex-row md:items-center md:justify-between">
-        <p>
-          codexdreamskin.top is an independent guide. Not affiliated with
-          OpenAI.
-        </p>
-        <div className="flex flex-wrap gap-x-5 gap-y-2">
-          <Link href="/" className="text-link underline decoration-2 underline-offset-4">
-            Dream Skin
-          </Link>
-          <Link
-            href="/codex-pets"
-            className="text-link underline decoration-2 underline-offset-4"
-          >
-            Codex Pets
-          </Link>
-          <Link
-            href="/about"
-            className="text-link underline decoration-2 underline-offset-4"
-          >
-            About
-          </Link>
-          <Link
-            href="/privacy"
-            className="text-link underline decoration-2 underline-offset-4"
-          >
-            Privacy
-          </Link>
+      <div className="mx-auto grid max-w-[1200px] gap-7 px-4 py-9 text-sm font-bold text-charcoal sm:px-6 lg:grid-cols-[1fr_auto] lg:items-start">
+        <div>
+          <p className="max-w-[58ch] text-pretty leading-6">
+            Codex Dream Skin is an independent installer guide, gallery, and
+            optional configuration service. It is not affiliated with or
+            endorsed by OpenAI.
+          </p>
+          <p className="mt-2 text-xs font-bold text-ash">© 2026 codexdreamskin.top</p>
         </div>
+        <nav aria-label="Footer navigation" className="grid gap-x-6 gap-y-3 sm:grid-cols-3">
+          {[
+            ["Install", "/#install"],
+            ["Codex Pets", "/codex-pets"],
+            ["Custom Skin", "/custom-skin"],
+            ["About", "/about"],
+            ["Contact", "/contact"],
+            ["Privacy", "/privacy"],
+            ["Terms", "/terms"],
+            ["Refund policy", "/refund-policy"],
+          ].map(([label, href]) => (
+            <Link key={href} href={href} className="text-link underline decoration-2 underline-offset-4">
+              {label}
+            </Link>
+          ))}
+          <CookieSettingsButton />
+        </nav>
       </div>
     </footer>
   );

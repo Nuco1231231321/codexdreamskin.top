@@ -44,6 +44,11 @@ const faqItems = [
     answer:
       "Codex 皮肤 is the Chinese search term for a Codex skin or Codex theme. This page uses Codex Dream Skin, Codex desktop theme, and Codex 皮肤 to describe the same goal: changing the visual layer of Codex Desktop while keeping native controls interactive.",
   },
+  {
+    question: "Do I have to pay to use Codex Dream Skin?",
+    answer:
+      "No. The installer guide, downloads, Codex Pets gallery, pet starter, tutorials, verification steps, and restore guidance are free. The optional $4.99 and $9.99 services charge only for individual palette preparation, image placement, readability checking, configuration packaging, and support.",
+  },
 ];
 
 const websiteJsonLd = {
@@ -359,6 +364,32 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 lg:py-24">
+          <div className="grid gap-8 rounded-xl border-2 border-graphite border-b-[7px] bg-eel-light p-6 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <Palette aria-hidden="true" className="size-12 text-link" weight="fill" />
+              <h2 className="mt-5 max-w-[20ch] text-balance text-4xl font-black text-eel-dark-blue sm:text-5xl">
+                Want the colors and image prepared for you?
+              </h2>
+              <p className="mt-5 max-w-[68ch] text-pretty text-lg leading-8 text-charcoal">
+                Keep the full self-service path free, or choose a one-time setup
+                service when you would rather receive a readable palette,
+                prepared configuration, and install instructions. Payment is
+                for personalization and support—not for the open-source software.
+              </p>
+              <p className="mt-4 font-black text-eel-dark-blue">
+                Quick Setup $4.99 · Custom Skin Early Access $9.99
+              </p>
+            </div>
+            <Link
+              href="/custom-skin"
+              className="button-primary inline-flex min-h-14 items-center justify-center px-6 font-black"
+            >
+              Compare skin services
+            </Link>
+          </div>
+        </section>
+
         <section id="safety" className="scroll-mt-24 mx-auto max-w-[1200px] px-4 py-16 sm:px-6 lg:py-24">
           <div className="grid gap-8 rounded-xl border-2 border-graphite border-b-[7px] bg-eel-light p-6 sm:p-10 lg:grid-cols-[auto_1fr]">
             <ShieldCheck aria-hidden="true" className="size-14 text-eel-dark-blue" weight="fill" />
@@ -403,7 +434,7 @@ export default function Home() {
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
               <div>
                 <h2 className="text-balance text-3xl font-black text-eel-dark-blue sm:text-4xl">
-                  Use the verified mirror and keep Restore ready.
+                  Check the mirrored ZIP and keep Restore ready.
                 </h2>
                 <p className="mt-4 max-w-[70ch] text-pretty leading-7 text-charcoal">
                   The ZIP mirrored on this site was tested for archive integrity

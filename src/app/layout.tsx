@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Nunito } from "next/font/google";
 import Script from "next/script";
 
+import { ConsentBanner } from "@/components/consent-banner";
+
 import "./globals.css";
 
 const nunito = Nunito({
@@ -72,17 +74,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunito.variable} scroll-smooth`}>
       <body>
-        {children}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-D5PHPQZHTL"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-consent-default" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-D5PHPQZHTL');`}
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  wait_for_update: 500
+});`}
         </Script>
+        {children}
+        <ConsentBanner />
       </body>
     </html>
   );

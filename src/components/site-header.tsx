@@ -26,16 +26,19 @@ export function SiteHeader({ ctaHref, ctaLabel }: SiteHeaderProps) {
 
         <div className="hidden items-center gap-5 text-sm font-extrabold text-charcoal lg:flex">
           <Link href="/#install" className="hover:text-link">
-            Dream Skin
+            Install
           </Link>
           <Link href="/codex-pets" className="hover:text-link">
             Codex Pets
           </Link>
+          <Link href="/custom-skin" className="hover:text-link">
+            Custom Skin
+          </Link>
           <Link href="/#safety" className="hover:text-link">
             Safety
           </Link>
-          <Link href="/#faq" className="hover:text-link">
-            FAQ
+          <Link href="/contact" className="hover:text-link">
+            Contact
           </Link>
         </div>
 

@@ -258,7 +258,7 @@ export default function CodexPetsPage() {
             <ol className="border-y-2 border-graphite">
               {[
                 [
-                  "Choose a verified slug",
+                  "Choose a published slug",
                   "Search the gallery by name, author, format, or style. Selecting a card updates the exact package slug in the install panel.",
                 ],
                 [
@@ -317,6 +317,36 @@ export default function CodexPetsPage() {
         </section>
 
         <PetBuilderGuide />
+
+        <section className="border-b-2 border-eel-light bg-white">
+          <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:py-24">
+            <div>
+              <h2 className="text-balance text-4xl font-black text-eel-dark-blue sm:text-5xl">
+                Choose V2 to install. Use V1 to learn the format.
+              </h2>
+            </div>
+            <div className="grid gap-6 text-pretty text-lg leading-8 text-charcoal sm:grid-cols-2">
+              <div className="border-l-[6px] border-action pl-5">
+                <h3 className="text-2xl font-black text-eel-dark-blue">V2 gallery pets</h3>
+                <p className="mt-3">
+                  Most gallery choices use V2. Pick one when your goal is to
+                  install a published companion quickly. Always review the
+                  selected slug and its package details before approving the
+                  prepared command.
+                </p>
+              </div>
+              <div className="border-l-[6px] border-link pl-5">
+                <h3 className="text-2xl font-black text-eel-dark-blue">V1 starter packages</h3>
+                <p className="mt-3">
+                  V1 uses the fixed 1536 × 1872 sprite sheet documented above.
+                  It is the clearer starting point for learning cell sizes,
+                  animation row order, manifest fields, validation, and the
+                  publishing workflow without guessing at newer directions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="border-b-2 border-eel-light bg-white">
           <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:py-24">
