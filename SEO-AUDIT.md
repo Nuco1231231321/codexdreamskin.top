@@ -27,7 +27,7 @@ The strongest completed improvements are:
 Top remaining SEO risks:
 
 - Community preview images and the mirrored ZIP need a verifiable license/permission record. Attribution and takedown language reduce trust risk but do not replace rights evidence.
-- Search Console indexing and sitemap submission must be verified against the deployed production URLs.
+- Search Console has accepted the sitemap and priority crawl requests, but the new `/custom-skin` route still needs Google to complete its first crawl and indexing decision.
 - The domain has little proven external authority; relevant links and genuine user references will matter more than adding more keyword variants.
 
 ## 2. Keyword and intent mapping
@@ -59,7 +59,7 @@ Cannibalization is controlled because each route has a separate job:
 
 - Issue: no blocking directive found on public content.
 - Impact: High.
-- Evidence: `robots.txt` allows `/` for all user agents and references `https://codexdreamskin.top/sitemap.xml`; sitemap contains the eight intended indexable routes and excludes both order routes.
+- Evidence: production `robots.txt` allows `/` for all user agents and references `https://codexdreamskin.top/sitemap.xml`; the live sitemap contains the eight intended indexable routes and excludes both order routes.
 - Fix: complete.
 - Priority: Pass.
 
@@ -67,7 +67,7 @@ Cannibalization is controlled because each route has a separate job:
 
 - Issue: none.
 - Impact: High.
-- Evidence: Next.js 16 static export generated 18 static routes; public content is available without JavaScript-only navigation or POST state.
+- Evidence: Next.js 16 static export generated 18 static routes; the production domain returned 200 for all ten audited HTML routes, robots.txt, sitemap.xml, and both ZIP downloads.
 - Fix: none.
 - Priority: Pass.
 
@@ -185,10 +185,11 @@ The material rights gap remains the largest trust issue. A source link proves or
 
 ### High impact after deployment
 
-1. Submit `https://codexdreamskin.top/sitemap.xml` in Google Search Console.
-2. Inspect and request indexing for `/`, `/codex-pets`, and `/custom-skin` after the production build is live.
-3. Monitor queries separately for skin-install intent, Pet-gallery intent, and paid custom-skin intent.
-4. Keep the 53-item gallery current without changing the canonical route.
+1. Completed: the existing sitemap was resubmitted in Google Search Console and remains `Success`.
+2. Completed: `/` and `/codex-pets` were confirmed indexed and added to the priority recrawl queue after the release.
+3. Completed: `/custom-skin` was confirmed unknown to Google and added to the priority crawl queue for first discovery.
+4. Monitor queries separately for skin-install intent, Pet-gallery intent, and paid custom-skin intent.
+5. Keep the 53-item gallery current without changing the canonical route.
 
 ### Authority and retention
 
@@ -204,5 +205,7 @@ The material rights gap remains the largest trust issue. A source link proves or
 - Recursive Linkinator crawl with fragment validation.
 - Chrome desktop and 390 × 844 interaction tests.
 - Google Search Console verification meta: present.
+- Google Search Console: sitemap `Success`; homepage and Pets indexed; recrawl requested; Custom Skin first-crawl request accepted.
 - GA4 measurement ID `G-D5PHPQZHTL`: loads only after analytics consent.
+- Production release: Cloudflare Pages deployment `b31a771f`, verified on `https://codexdreamskin.top`.
 - Detailed AdSense findings: `ADSENSE-AUDIT.md`.

@@ -76,12 +76,12 @@
 | ADS-UX-04 | Pass | 页面不会自动下载、跳转或打开弹窗；下载、剪贴板和 checkout 都需要用户操作。 | 不增加强制弹窗、popunder 或自动重定向。 |
 | ADS-UX-05 | Pass | About、Contact、Privacy、Terms、Refund Policy 均为真实内容并从页脚可达。 | 保持政策日期与支付流程同步。 |
 | ADS-UX-06 | Pass | 没有广告占位框或模仿广告的布局；主要 CTA 与内容导航区分清楚。 | 投放广告时使用清晰 `Ad`/`Sponsored` 标签。 |
-| ADS-CRAWL-01 | Pass | 本地 Cloudflare Pages 模拟中所有公开路由、robots、sitemap、两个 ZIP 均返回 200。 | 部署后用生产域名重复验证。 |
+| ADS-CRAWL-01 | Pass | 生产域名上十个 HTML 路由、robots、sitemap 和两个 ZIP 均返回 200；首次边缘传播后的 `/custom-skin` 在三个 Cloudflare IP 上连续返回 200。 | 发布新版本后重复同一检查。 |
 | ADS-CRAWL-02 | Pass | robots.txt 对 `*` 允许 `/`，没有登录墙；公开内容为静态 HTML。 | 不要在 WAF 中阻止 Mediapartners-Google 或 Googlebot。 |
 | ADS-CRAWL-03 | Pass | 首页、Pets、About 和政策页均通过 GET 直接访问；POST 仅用于 noindex 的支付确认和私有 brief。 | 不在含广告的页面依赖 POST 状态。 |
 | ADS-CRAWL-04 | Pass | 公开路由不依赖 cookie/session 重定向；Next.js 静态导出直接返回页面。 | 生产验证时检查 HTTP/HTTPS 和 www 只保留一个规范版本。 |
 | ADS-CRAWL-05 | Pass | 公开 URL 简短、稳定、全小写并使用连字符；用户/会话参数只存在于 noindex 订单返回页。 | 不把 checkout 参数加入 sitemap 或内部导航。 |
-| ADS-CRAWL-06 | Pass | 域名已在 Cloudflare 管理并使用 HTTPS；静态资源由 Cloudflare Pages 提供。 | 部署后检查 TLS、DNS 与 5xx。 |
+| ADS-CRAWL-06 | Pass | 域名已在 Cloudflare 管理并使用 HTTPS；HTTP 301 跳转 HTTPS，静态资源由 Cloudflare Pages 提供。 | 持续监控 TLS、DNS 与 5xx。 |
 | ADS-CRAWL-07 | Pass | sitemap 暴露全部 8 个可索引公共路由；首页和页脚提供内部链接。 | 新增高质量页面时同步 sitemap。 |
 | ADS-PROG-01 | Unknown | 当前没有广告，无法通过代码证明未来不会自点或制造无效展示。 | 站点所有者书面确认不自点、不让团队测试真实广告、不使用自动刷新。 |
 | ADS-PROG-02 | Pass | 全站没有“点击广告支持我们”、奖励点击、箭头指向广告等文案。 | 广告上线后继续保持中性标签。 |
