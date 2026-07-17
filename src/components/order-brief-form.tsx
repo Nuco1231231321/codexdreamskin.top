@@ -8,6 +8,7 @@ import {
 } from "@phosphor-icons/react";
 import { FormEvent, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import {
   commerceFunctionsBase,
@@ -27,6 +28,7 @@ type SubmissionState =
   | { status: "complete"; reference: string };
 
 export function OrderBriefForm() {
+  const t = useTranslations("Order.brief");
   const searchParams = useSearchParams();
   const rawQuery = searchParams.toString();
   const [verification, setVerification] = useState<VerificationState>({
@@ -43,7 +45,7 @@ export function OrderBriefForm() {
       if (!rawQuery) {
         setVerification({
           status: "error",
-          message: "No completed checkout was found in this link.",
+          message: t("errors.missingCheckout"),
         });
         return;
       }
@@ -68,7 +70,7 @@ export function OrderBriefForm() {
           !result.order_reference
         ) {
           throw new Error(
-            result.error ?? "The payment could not be confirmed yet.",
+            result.error ?? t("errors.verification"),
           );
         }
 
@@ -86,7 +88,7 @@ export function OrderBriefForm() {
             message:
               verificationError instanceof Error
                 ? verificationError.message
-                : "The payment could not be confirmed yet.",
+                : t("errors.verification"),
           });
         }
       }
@@ -96,7 +98,7 @@ export function OrderBriefForm() {
     return () => {
       isCurrent = false;
     };
-  }, [rawQuery]);
+  }, [rawQuery, t]);
 
   async function submitBrief(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -119,7 +121,7 @@ export function OrderBriefForm() {
       };
 
       if (!response.ok || !result.submitted || !result.brief_reference) {
-        throw new Error(result.error ?? "Your brief could not be submitted.");
+        throw new Error(result.error ?? t("errors.submission"));
       }
 
       setSubmission({ status: "complete", reference: result.brief_reference });
@@ -129,7 +131,7 @@ export function OrderBriefForm() {
         message:
           submissionError instanceof Error
             ? submissionError.message
-            : "Your brief could not be submitted.",
+            : t("errors.submission"),
       });
     }
   }
@@ -139,10 +141,10 @@ export function OrderBriefForm() {
       <div className="rounded-xl border-2 border-graphite border-b-[7px] bg-eel-light p-8 text-center" role="status">
         <CircleNotch aria-hidden="true" className="mx-auto size-10 text-link" weight="bold" />
         <h2 className="mt-4 text-balance text-2xl font-black text-eel-dark-blue">
-          Confirming your payment
+          {t("checkingTitle")}
         </h2>
         <p className="mt-2 text-pretty text-charcoal">
-          This normally takes only a few seconds. Keep this page open.
+          {t("checkingBody")}
         </p>
       </div>
     );
@@ -152,12 +154,10 @@ export function OrderBriefForm() {
     return (
       <div className="rounded-xl border-2 border-red-700 border-b-[7px] bg-red-50 p-6" role="alert">
         <h2 className="text-balance text-2xl font-black text-red-900">
-          Payment confirmation needs another moment
+          {t("verificationTitle")}
         </h2>
         <p className="mt-3 text-pretty leading-7 text-red-900">
-          {verification.message} Refresh this page after 15 seconds. If the
-          message remains, use the contact page and include the address of this
-          page so the order can be checked securely.
+          {verification.message} {t("verificationFollowUp")}
         </p>
       </div>
     );
@@ -172,12 +172,10 @@ export function OrderBriefForm() {
       <div className="rounded-xl border-2 border-graphite border-b-[7px] bg-eel-light p-7 sm:p-9" role="status">
         <CheckCircle aria-hidden="true" className="size-14 text-link" weight="fill" />
         <h2 className="mt-5 text-balance text-3xl font-black text-eel-dark-blue">
-          Your brief is in the production queue.
+          {t("completeTitle")}
         </h2>
         <p className="mt-4 text-pretty text-lg leading-8 text-charcoal">
-          Reference <strong>{submission.reference}</strong>. Delivery is sent to
-          the email used at checkout within 72 hours. The package includes the
-          prepared configuration plus install and restore instructions.
+          {t("completeBody", { reference: submission.reference })}
         </p>
       </div>
     );
@@ -192,26 +190,25 @@ export function OrderBriefForm() {
     >
       <div className="flex flex-col gap-5 border-b-2 border-eel-light pb-6 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-sm font-black uppercase text-link">Payment confirmed</p>
+          <p className="text-sm font-black uppercase text-link">{t("paymentConfirmed")}</p>
           <h2 className="mt-2 text-balance text-3xl font-black text-eel-dark-blue">
             {product.name}
           </h2>
           <p className="mt-2 text-sm font-bold text-ash">
-            Order ending {verification.orderReference} · {product.delivery}
+            {t("orderMeta", { reference: verification.orderReference })}
           </p>
         </div>
         <ShieldCheck aria-hidden="true" className="size-12 shrink-0 text-action" weight="fill" />
       </div>
 
       <p className="mt-6 text-pretty leading-7 text-charcoal">
-        Complete one short brief. The checkout email is already connected to
-        the order, so there is no account to create and no order number to copy.
+        {t("intro")}
       </p>
 
       <div className="mt-7 grid gap-6 sm:grid-cols-2">
         <div className="grid gap-2">
           <label htmlFor="platform" className="font-black text-eel-dark-blue">
-            Codex platform
+            {t("platform")}
           </label>
           <select
             id="platform"
@@ -227,7 +224,7 @@ export function OrderBriefForm() {
 
         <div className="grid gap-2">
           <label htmlFor="visual-direction" className="font-black text-eel-dark-blue">
-            Visual direction
+            {t("visualDirection")}
           </label>
           <select
             id="visual-direction"
@@ -236,32 +233,32 @@ export function OrderBriefForm() {
             defaultValue="soft"
             className="min-h-12 rounded-xl border-2 border-graphite bg-white px-3 font-bold text-eel-dark-blue outline-none focus:border-action focus:outline-3 focus:outline-offset-2 focus:outline-eel-dark-blue"
           >
-            <option value="soft">Soft and calm</option>
-            <option value="dark">Dark and focused</option>
-            <option value="bright">Bright and playful</option>
-            <option value="minimal">Minimal</option>
-            <option value="surprise-me">Choose for me</option>
+            <option value="soft">{t("directions.soft")}</option>
+            <option value="dark">{t("directions.dark")}</option>
+            <option value="bright">{t("directions.bright")}</option>
+            <option value="minimal">{t("directions.minimal")}</option>
+            <option value="surprise-me">{t("directions.surprise")}</option>
           </select>
         </div>
       </div>
 
       <div className="mt-6 grid gap-2">
         <label htmlFor="accent-color" className="font-black text-eel-dark-blue">
-          Favorite accent color <span className="font-bold text-ash">(optional)</span>
+          {t("accent")} <span className="font-bold text-ash">{t("optional")}</span>
         </label>
         <input
           id="accent-color"
           name="accent_color"
           type="text"
           maxLength={40}
-          placeholder="For example: forest green, warm orange, or #58CC02"
+          placeholder={t("accentPlaceholder")}
           className="min-h-12 rounded-xl border-2 border-graphite px-4 font-bold text-eel-dark-blue outline-none placeholder:text-ash focus:border-action focus:outline-3 focus:outline-offset-2 focus:outline-eel-dark-blue"
         />
       </div>
 
       <div className="mt-6 grid gap-2">
         <label htmlFor="skin-image" className="font-black text-eel-dark-blue">
-          {requiresImage ? "Image for your custom skin" : "Background image (optional)"}
+          {requiresImage ? t("customImage") : t("backgroundImage")}
         </label>
         <div className="rounded-xl border-2 border-dashed border-graphite bg-[#fbfff8] p-5">
           <ImageSquare aria-hidden="true" className="size-9 text-action" weight="fill" />
@@ -275,22 +272,21 @@ export function OrderBriefForm() {
             className="mt-3 block w-full text-sm font-bold text-charcoal file:mr-4 file:rounded-xl file:border-2 file:border-graphite file:bg-white file:px-4 file:py-2 file:font-black file:text-eel-dark-blue"
           />
           <p id="skin-image-help" className="mt-3 text-pretty text-sm leading-6 text-ash">
-            PNG, JPEG, WebP, HEIC, or HEIF up to 15 MB. A wide image with a calm
-            area behind text usually produces the clearest result.
+            {t("imageHelp")}
           </p>
         </div>
       </div>
 
       <div className="mt-6 grid gap-2">
         <label htmlFor="brief-notes" className="font-black text-eel-dark-blue">
-          Anything important? <span className="font-bold text-ash">(optional)</span>
+          {t("notes")} <span className="font-bold text-ash">{t("optional")}</span>
         </label>
         <textarea
           id="brief-notes"
           name="notes"
           rows={5}
           maxLength={1200}
-          placeholder="Examples: keep the composer dark, avoid pink, place the subject on the right."
+          placeholder={t("notesPlaceholder")}
           className="rounded-xl border-2 border-graphite px-4 py-3 font-bold leading-6 text-eel-dark-blue outline-none placeholder:text-ash focus:border-action focus:outline-3 focus:outline-offset-2 focus:outline-eel-dark-blue"
         />
       </div>
@@ -303,16 +299,13 @@ export function OrderBriefForm() {
           className="mt-1 size-5 shrink-0 accent-[#3f9800]"
         />
         <span>
-          I created or have permission to use any image I upload. If I do not
-          upload an image, I authorize the use of rights-cleared or abstract
-          assets only.
+          {t("rights")}
         </span>
       </label>
 
       {requiresImage ? (
         <p className="mt-4 text-pretty text-sm font-bold leading-6 text-ash">
-          Early Access includes one tailored skin and no revision. It does not
-          include original illustration or a license for third-party characters.
+          {t("earlyAccess")}
         </p>
       ) : null}
 
@@ -332,9 +325,8 @@ export function OrderBriefForm() {
         ) : (
           <CheckCircle aria-hidden="true" className="size-5" weight="fill" />
         )}
-        {submission.status === "submitting" ? "Submitting securely..." : "Submit my skin brief"}
+        {submission.status === "submitting" ? t("submitting") : t("submit")}
       </button>
     </form>
   );
 }
-

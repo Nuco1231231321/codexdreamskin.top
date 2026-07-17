@@ -1,6 +1,7 @@
 "use client";
 
 import { Cookie } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 const consentStorageKey = "codex-dream-skin-analytics-consent";
@@ -37,6 +38,7 @@ function startAnalytics() {
 
 export function ConsentBanner() {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("Common.cookie");
 
   useEffect(() => {
     const savedConsent = window.localStorage.getItem(consentStorageKey);
@@ -74,7 +76,7 @@ export function ConsentBanner() {
 
   return (
     <aside
-      aria-label="Analytics preferences"
+      aria-label={t("ariaLabel")}
       className="fixed inset-x-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-50 mx-auto max-w-[760px] rounded-xl border-2 border-graphite border-b-[7px] bg-white p-5 sm:p-6"
     >
       <div className="flex items-start gap-4">
@@ -83,12 +85,10 @@ export function ConsentBanner() {
         </span>
         <div className="min-w-0">
           <h2 className="text-balance text-xl font-black text-eel-dark-blue">
-            Choose your analytics preference
+            {t("title")}
           </h2>
           <p className="mt-2 text-pretty text-sm leading-6 text-charcoal">
-            Essential site features work without analytics. If you accept,
-            Google Analytics helps measure which install guides and gallery
-            pages are useful. You can change this choice from the footer.
+            {t("description")}
           </p>
         </div>
       </div>
@@ -98,14 +98,14 @@ export function ConsentBanner() {
           onClick={() => saveConsent("denied")}
           className="button-secondary min-h-12 px-5 font-black"
         >
-          Use essential only
+          {t("essential")}
         </button>
         <button
           type="button"
           onClick={() => saveConsent("granted")}
           className="button-primary min-h-12 px-5 font-black"
         >
-          Accept analytics
+          {t("accept")}
         </button>
       </div>
     </aside>

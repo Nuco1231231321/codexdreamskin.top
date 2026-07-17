@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, CircleNotch } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import {
@@ -22,6 +23,7 @@ export function CheckoutButton({
 }: CheckoutButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const t = useTranslations("Common.checkout");
 
   async function startCheckout() {
     setIsLoading(true);
@@ -40,7 +42,7 @@ export function CheckoutButton({
 
       if (!response.ok || !checkout.checkout_url) {
         throw new Error(
-          checkout.error ?? "Checkout is temporarily unavailable.",
+          checkout.error ?? t("unavailable"),
         );
       }
 
@@ -49,7 +51,7 @@ export function CheckoutButton({
       setError(
         checkoutError instanceof Error
           ? checkoutError.message
-          : "Checkout is temporarily unavailable.",
+          : t("unavailable"),
       );
       setIsLoading(false);
     }
@@ -72,14 +74,13 @@ export function CheckoutButton({
         ) : (
           <ArrowRight aria-hidden="true" className="size-5" weight="bold" />
         )}
-        {isLoading ? "Opening secure checkout..." : label}
+        {isLoading ? t("opening") : label}
       </button>
       {error ? (
         <p className="mt-3 text-pretty text-sm font-bold text-red-700" role="alert">
-          {error} Try again or use the contact page if the problem continues.
+          {error} {t("errorFollowUp")}
         </p>
       ) : null}
     </div>
   );
 }
-

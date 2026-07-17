@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, CopySimple, WarningCircle } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -13,6 +14,7 @@ type CopyCommandProps = {
 
 export function CopyCommand({ command, label, className }: CopyCommandProps) {
   const [status, setStatus] = useState<"idle" | "copied" | "error">("idle");
+  const t = useTranslations("Common.copy");
 
   function copyWithSelection(value: string) {
     const textarea = document.createElement("textarea");
@@ -62,7 +64,7 @@ export function CopyCommand({ command, label, className }: CopyCommandProps) {
         ) : (
           <CopySimple aria-hidden="true" className="size-5" weight="bold" />
         )}
-        {status === "copied" ? "Copied" : label}
+        {status === "copied" ? t("copied") : label}
       </button>
       <p
         aria-live="polite"
@@ -74,10 +76,10 @@ export function CopyCommand({ command, label, className }: CopyCommandProps) {
         {status === "error" ? (
           <span className="inline-flex items-center gap-1.5">
             <WarningCircle aria-hidden="true" className="size-4" weight="fill" />
-            Copy failed. Select the command above manually.
+            {t("error")}
           </span>
         ) : status === "copied" ? (
-          "Command copied to your clipboard."
+          t("success")
         ) : (
           ""
         )}

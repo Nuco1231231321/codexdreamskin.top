@@ -7,6 +7,7 @@ import {
   Sparkle,
 } from "@phosphor-icons/react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 
 import { CopyCommand } from "@/components/copy-command";
@@ -29,6 +30,7 @@ type TagFilter = (typeof tagFilters)[number];
 type SortOrder = "featured" | "name";
 
 export function PetPicker() {
+  const t = useTranslations("PetPicker");
   const [query, setQuery] = useState("");
   const [formatFilter, setFormatFilter] =
     useState<(typeof formatFilters)[number]>("All");
@@ -65,7 +67,7 @@ export function PetPicker() {
     codexPets.find((pet) => pet.slug === selectedSlug) ?? codexPets[0];
   const visiblePets = filteredPets.slice(0, visibleCount);
   const installCommand = `npx codex-pets add ${selectedPet.slug}`;
-  const installPrompt = `Install this pet: ${installCommand}`;
+  const installPrompt = t("installPrompt", { command: installCommand });
   const installHref = `codex://new?prompt=${encodeURIComponent(installPrompt)}`;
   const hasMorePets = visiblePets.length < filteredPets.length;
 
@@ -90,7 +92,7 @@ export function PetPicker() {
               htmlFor="pet-search"
               className="text-sm font-black text-eel-dark-blue"
             >
-              Search 53 Codex pets
+              {t("searchLabel")}
             </label>
             <div className="mt-2 flex min-h-12 items-center gap-2 rounded-xl border-2 border-graphite bg-white px-3 focus-within:border-action focus-within:outline-3 focus-within:outline-offset-2 focus-within:outline-eel-dark-blue">
               <MagnifyingGlass
@@ -106,7 +108,7 @@ export function PetPicker() {
                   setQuery(event.target.value);
                   resetVisibleCount();
                 }}
-                placeholder="Search cat, anime, pixel, author, or slug"
+                placeholder={t("searchPlaceholder")}
                 className="min-w-0 flex-1 bg-transparent py-2 font-bold text-eel-dark-blue outline-none placeholder:text-ash"
               />
             </div>
@@ -115,7 +117,7 @@ export function PetPicker() {
           <div className="grid gap-4 sm:grid-cols-[auto_1fr_1fr] sm:items-end">
             <fieldset>
               <legend className="text-sm font-black text-eel-dark-blue">
-                Format
+                {t("format")}
               </legend>
               <div className="mt-2 flex flex-wrap gap-2">
                 {formatFilters.map((filter) => (
@@ -129,7 +131,7 @@ export function PetPicker() {
                     }}
                     className="pet-filter min-h-11 rounded-xl border-2 border-graphite px-3 text-sm font-black text-charcoal"
                   >
-                    {filter}
+                    {filter === "All" ? t("all") : filter}
                   </button>
                 ))}
               </div>
@@ -140,7 +142,7 @@ export function PetPicker() {
                 htmlFor="pet-tag-filter"
                 className="text-sm font-black text-eel-dark-blue"
               >
-                Style
+                {t("style")}
               </label>
               <select
                 id="pet-tag-filter"
@@ -153,9 +155,7 @@ export function PetPicker() {
               >
                 {tagFilters.map((tag) => (
                   <option key={tag} value={tag}>
-                    {tag === "All"
-                      ? "All styles"
-                      : tag.charAt(0).toUpperCase() + tag.slice(1)}
+                    {tag === "All" ? t("allStyles") : t(`tags.${tag}`)}
                   </option>
                 ))}
               </select>
@@ -166,7 +166,7 @@ export function PetPicker() {
                 htmlFor="pet-sort"
                 className="text-sm font-black text-eel-dark-blue"
               >
-                Sort
+                {t("sort")}
               </label>
               <select
                 id="pet-sort"
@@ -177,8 +177,8 @@ export function PetPicker() {
                 }}
                 className="min-h-11 rounded-xl border-2 border-graphite bg-white px-3 font-bold text-eel-dark-blue outline-none focus:border-action focus:outline-3 focus:outline-offset-2 focus:outline-eel-dark-blue"
               >
-                <option value="featured">Newest listings</option>
-                <option value="name">Name A-Z</option>
+                <option value="featured">{t("newest")}</option>
+                <option value="name">{t("nameSort")}</option>
               </select>
             </div>
           </div>
@@ -188,8 +188,7 @@ export function PetPicker() {
           aria-live="polite"
           className="mt-4 text-sm font-bold tabular-nums text-ash"
         >
-          Showing {visiblePets.length} of {filteredPets.length} matches from {" "}
-          {codexPets.length} public pet listings.
+          {t("results", { visible: visiblePets.length, filtered: filteredPets.length, total: codexPets.length })}
         </p>
 
         {filteredPets.length > 0 ? (
@@ -242,13 +241,13 @@ export function PetPicker() {
                           ) : null}
                         </span>
                         <span className="mt-1 block truncate text-xs font-extrabold text-ash">
-                          by {pet.author}
+                          {t("by", { author: pet.author })}
                         </span>
                         <span className="mt-2 block text-xs font-black text-link">
                           {pet.format}
                           {pet.tags.length > 0
                             ? ` | ${pet.tags.slice(0, 2).join(", ")}`
-                            : " | community pet"}
+                            : ` | ${t("communityPet")}`}
                         </span>
                       </span>
                     </button>
@@ -263,7 +262,7 @@ export function PetPicker() {
                 onClick={() => setVisibleCount(filteredPets.length)}
                 className="button-secondary mx-auto mt-8 flex min-h-12 items-center justify-center px-6 font-black"
               >
-                Show all {filteredPets.length - visiblePets.length} more pets
+                {t("showMore", { count: filteredPets.length - visiblePets.length })}
               </button>
             ) : null}
           </>
@@ -275,31 +274,30 @@ export function PetPicker() {
               weight="fill"
             />
             <h3 className="mt-4 text-balance text-2xl font-black text-eel-dark-blue">
-              No pets match those filters.
+              {t("emptyTitle")}
             </h3>
             <p className="mt-2 text-pretty text-charcoal">
-              Reset the search, format, and style controls to reopen the full
-              desktop pet gallery.
+              {t("emptyBody")}
             </p>
             <button
               type="button"
               onClick={clearFilters}
               className="button-secondary mt-5 inline-flex min-h-12 items-center justify-center px-5 text-sm font-extrabold"
             >
-              Show all pets
+              {t("showAll")}
             </button>
           </div>
         )}
       </div>
 
       <aside
-        aria-label="Selected Codex pet installation"
+        aria-label={t("selectedAria")}
         className="order-first min-w-0 rounded-xl border-2 border-graphite border-b-[7px] bg-eel-light p-5 sm:p-6 lg:order-none lg:sticky lg:top-24"
       >
         <div className="grid place-items-center rounded-xl border-2 border-action bg-white p-4">
           <Image
             src={selectedPet.image}
-            alt={`${selectedPet.name} selected desktop pet`}
+            alt={t("selectedAlt", { name: selectedPet.name })}
             width={192}
             height={208}
             sizes="192px"
@@ -307,14 +305,13 @@ export function PetPicker() {
           />
         </div>
         <p className="mt-5 text-sm font-black text-link">
-          {selectedPet.format} pet by {selectedPet.author}
+          {t("selectedMeta", { format: selectedPet.format, author: selectedPet.author })}
         </p>
         <h3 className="mt-1 text-balance text-3xl font-black text-eel-dark-blue">
           {selectedPet.name}
         </h3>
         <p className="mt-3 text-pretty leading-7 text-eel-dark-blue">
-          This listing uses the published slug {selectedPet.slug}. The link
-          below opens Codex with the exact install command prepared for review.
+          {t("selectedBody", { slug: selectedPet.slug })}
         </p>
 
         <a
@@ -322,19 +319,19 @@ export function PetPicker() {
           className="button-primary mt-6 inline-flex min-h-14 w-full items-center justify-center gap-2 px-5 text-center font-black"
         >
           <PawPrint aria-hidden="true" className="size-5" weight="fill" />
-          Install in Codex
+          {t("install")}
         </a>
 
         <div className="mt-5 min-w-0">
           <p className="mb-2 text-sm font-black text-eel-dark-blue">
-            Terminal fallback
+            {t("terminal")}
           </p>
           <pre className="min-w-0 max-w-full overflow-x-auto rounded-xl border-2 border-graphite bg-white p-4 font-mono text-sm leading-6 text-eel-dark-blue">
             <code>{installCommand}</code>
           </pre>
           <CopyCommand
             command={installCommand}
-            label="Copy CLI command"
+            label={t("copy")}
             className="mt-3"
           />
         </div>
@@ -345,7 +342,7 @@ export function PetPicker() {
           rel="noreferrer"
           className="mt-2 inline-flex items-center gap-2 font-extrabold text-link underline decoration-2 underline-offset-4"
         >
-          Review package details
+          {t("review")}
           <ArrowSquareOut aria-hidden="true" className="size-4" weight="bold" />
         </a>
       </aside>

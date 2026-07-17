@@ -1,0 +1,543 @@
+{
+  "Common": {
+    "brandHome": "Codex Dream Skin home",
+    "navigationLabel": "Primary navigation",
+    "nav": {
+      "install": "Install",
+      "pets": "Codex Pets",
+      "customSkin": "Custom Skin",
+      "safety": "Safety",
+      "contact": "Contact"
+    },
+    "languageSwitcher": {
+      "ariaLabel": "Switch to Simplified Chinese",
+      "shortLabel": "中文"
+    },
+    "footer": {
+      "navigationLabel": "Footer navigation",
+      "disclaimer": "Codex Dream Skin is an independent installer guide, gallery, and optional configuration service. It is not affiliated with or endorsed by OpenAI.",
+      "install": "Install",
+      "pets": "Codex Pets",
+      "customSkin": "Custom Skin",
+      "about": "About",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "refund": "Refund policy",
+      "cookieSettings": "Cookie settings"
+    },
+    "cookie": {
+      "ariaLabel": "Analytics preferences",
+      "title": "Choose your analytics preference",
+      "description": "Essential site features work without analytics. If you accept, Google Analytics helps measure which install guides and gallery pages are useful. You can change this choice from the footer.",
+      "essential": "Use essential only",
+      "accept": "Accept analytics"
+    },
+    "copy": {
+      "copied": "Copied",
+      "success": "Command copied to your clipboard.",
+      "error": "Copy failed. Select the command above manually."
+    },
+    "checkout": {
+      "opening": "Opening secure checkout...",
+      "unavailable": "Checkout is temporarily unavailable.",
+      "errorFollowUp": "Try again or use the contact page if the problem continues."
+    }
+  },
+  "Metadata": {
+    "home": {
+      "title": "Codex Dream Skin — Free Installer, Themes & 53 Pets",
+      "description": "Install Codex Dream Skin free on macOS or Windows, browse 53 Codex Pets, customize your theme, and restore the official Codex appearance safely.",
+      "imageAlt": "Codex Dream Skin free installer and Codex Pets gallery",
+      "keywords": ["Codex Dream Skin", "Codex skin", "Codex desktop theme", "Codex theme changer", "change Codex theme", "Codex Pets", "Codex 皮肤"]
+    },
+    "pets": {
+      "title": "Codex Pets Gallery: 53 Free Desktop Pets",
+      "description": "Browse 53 free Codex Pets, open a prepared install task, copy the CLI command, and learn how to build a custom desktop pet.",
+      "imageAlt": "Codex Pets gallery with 53 free desktop pets",
+      "keywords": ["Codex Pets", "Codex pet", "Codex desktop pet", "free desktop pets", "Codex pet gallery", "Codex 宠物"]
+    },
+    "customSkin": {
+      "title": "Custom Codex Skin Setup from $4.99",
+      "description": "Choose optional Codex skin setup help from $4.99 or one custom skin for $9.99 while keeping the installer, gallery, and tutorials free.",
+      "imageAlt": "Custom Codex skin setup service",
+      "keywords": ["custom Codex skin", "Codex skin setup", "Codex theme service", "custom Codex theme", "Codex skin price"]
+    },
+    "about": {
+      "title": "About Codex Dream Skin",
+      "description": "Learn how Codex Dream Skin documents installation, gallery listings, safety boundaries, and optional configuration services.",
+      "imageAlt": "About Codex Dream Skin",
+      "keywords": ["about Codex Dream Skin", "Codex skin guide", "Codex Dream Skin safety"]
+    },
+    "contact": {
+      "title": "Contact Codex Dream Skin",
+      "description": "Get help with Codex skin installation, orders, privacy requests, corrections, or rights and attribution concerns.",
+      "imageAlt": "Contact Codex Dream Skin support",
+      "keywords": ["Codex Dream Skin contact", "Codex skin support", "Codex theme help"]
+    },
+    "privacy": {
+      "title": "Privacy Policy | Codex Dream Skin",
+      "description": "How Codex Dream Skin handles analytics consent, Creem checkout information, Supabase order records, private image uploads, and privacy requests.",
+      "imageAlt": "Codex Dream Skin privacy policy",
+      "keywords": ["Codex Dream Skin privacy", "analytics consent", "private image upload"]
+    },
+    "terms": {
+      "title": "Terms of Service | Codex Dream Skin",
+      "description": "Terms for the free Codex Dream Skin installer, pet gallery, downloads, image rights, Creem payments, delivery, and optional setup services.",
+      "imageAlt": "Codex Dream Skin terms of service",
+      "keywords": ["Codex Dream Skin terms", "Codex skin service terms", "Codex skin delivery"]
+    },
+    "refund": {
+      "title": "Refund Policy | Codex Dream Skin",
+      "description": "Refund and cancellation conditions for Skin Quick Setup and Custom Skin Early Access, including delivery problems and unusable source images.",
+      "imageAlt": "Codex Dream Skin refund policy",
+      "keywords": ["Codex Dream Skin refund", "custom skin refund policy", "Codex skin cancellation"]
+    },
+    "orderSuccess": {
+      "title": "Complete Your Skin Brief | Codex Dream Skin",
+      "description": "Confirm a Codex Dream Skin order and submit the image and preferences needed for delivery.",
+      "imageAlt": "Complete a Codex Dream Skin order",
+      "keywords": ["Codex Dream Skin order", "custom skin brief"]
+    },
+    "orderCancel": {
+      "title": "Checkout Canceled | Codex Dream Skin",
+      "description": "No payment was completed. Return to the free Codex skin tools or review the optional setup services.",
+      "imageAlt": "Codex Dream Skin checkout canceled",
+      "keywords": ["Codex Dream Skin checkout", "Codex skin services"]
+    }
+  },
+  "InstallPanel": {
+    "platformLabel": "Choose your operating system",
+    "download": "Download ZIP",
+    "restore": "Restore the official Codex appearance",
+    "mac": {
+      "title": "Install Codex Dream Skin on Mac",
+      "description": "Works with Apple Silicon and Intel Mac. Launch the official Codex desktop app once before installing so its configuration file exists. The Mac package validates and reuses Codex's bundled Node runtime, so a global Node install is not required.",
+      "requirements": ["Close Codex before running the installer.", "The package is downloaded over HTTPS from this site.", "Desktop launchers are created for start, customize, verify, and restore."],
+      "fastInstall": "Fast Terminal install",
+      "copyInstall": "Copy Mac install",
+      "copyRestore": "Copy restore command"
+    },
+    "windows": {
+      "title": "Install Codex Dream Skin on Windows",
+      "description": "The Windows scripts target the official Microsoft Store Codex package. Install Node.js 22 or newer, close Codex, then run the install and start scripts. The current Windows build applies its bundled design and does not yet provide the Mac image picker.",
+      "requirements": ["Node.js 22 or newer is required.", "Close every Codex window before installing.", "The Store package identity is checked before launch."],
+      "fastInstall": "PowerShell install",
+      "copyInstall": "Copy Windows install",
+      "copyRestore": "Copy restore command"
+    }
+  },
+  "About": {
+    "back": "Back to installer",
+    "title": "About Codex Dream Skin",
+    "intro": "codexdreamskin.top helps people install, understand, and safely restore an unofficial visual layer for Codex Desktop. It also curates public Codex Pets and offers optional configuration preparation. The site is independent and is not affiliated with or endorsed by OpenAI.",
+    "checkingTitle": "How information is checked",
+    "checkingBody": "Installation commands, operating-system requirements, customization limits, restore behavior, and security notes are checked against the current public project documentation and then tested against the website's copy-ready flow. Visual results are not presented as guaranteed pixel matches because Codex versions, platforms, images, and renderer details can change.",
+    "providesTitle": "What the site provides",
+    "provides": [
+      {"title": "Free practical access", "body": "Install commands, platform notes, restore guidance, 53 pet listings, filters, and a pet-building starter remain available without an account or payment."},
+      {"title": "Clear commercial boundary", "body": "Paid orders cover individual preparation and support. They do not sell the open-source software, the official Codex app, or third-party artwork rights."},
+      {"title": "Visible safety limits", "body": "The guide explains local debugging, compatibility risk, image rights, restoration, and the fact that a desktop update may require a newer theme package."},
+      {"title": "Human-readable delivery", "body": "Optional paid packages include a prepared configuration and practical install and restore instructions instead of leaving customers with unexplained files."}
+    ],
+    "correctionsTitle": "Corrections and rights requests",
+    "correctionsBody": "A creator, rights holder, or user can report an inaccurate statement, broken install path, unsafe instruction, attribution issue, or image rights concern through the contact page. Affected material can be corrected or removed while the claim is reviewed.",
+    "contact": "Contact the site"
+  },
+  "Contact": {
+    "back": "Back to home",
+    "title": "Contact",
+    "intro": "Get help with a paid order, an installation problem, a privacy or deletion request, a factual correction, or a gallery rights concern. Messages are normally reviewed within two business days.",
+    "emailTitle": "Email support",
+    "emailBody": "For an order, email from the address used at checkout and include the order reference shown on the confirmation page. Do not send passwords, API keys, Codex conversations, or unrelated private files.",
+    "includeTitle": "What to include",
+    "items": [
+      {"title": "Installation help", "body": "Platform, Codex version if known, the exact step that failed, and the visible error message. Remove private paths or project names from screenshots."},
+      {"title": "Order help", "body": "Checkout email, order reference, selected service, and a short description of the problem. Never send card details."},
+      {"title": "Rights or attribution", "body": "The exact gallery item or page, your relationship to the work, and a reliable way to verify the claim."},
+      {"title": "Privacy request", "body": "State whether you want access, correction, or deletion of order, brief, upload, or analytics-related information."}
+    ]
+  },
+  "Privacy": {
+    "back": "Back to home",
+    "title": "Privacy Policy",
+    "effective": "Effective July 17, 2026",
+    "intro": "This policy explains what information is involved when you browse the free site, accept analytics, place a paid order, upload a source image, or contact support.",
+    "request": "Make a privacy request",
+    "sections": [
+      {"title": "Information used by the free site", "body": "The installer, gallery, tutorials, downloads, and copy buttons do not require an account. Hosting and security providers may process ordinary request information such as IP address, browser type, requested URL, timestamp, and security signals. Copy actions use the browser clipboard only after you choose a copy button. The website does not receive Codex conversations, project contents, local paths, API keys, or desktop credentials through the free install flow."},
+      {"title": "Analytics consent", "body": "Google Analytics 4 loads only after you choose Accept analytics. When accepted, Google may process page views, engagement events, device and browser information, approximate location derived from IP address, and identifiers used to measure sessions. Analytics storage is denied by default. Your choice is stored in your browser and can be changed with Cookie settings in the footer. Essential site features remain available when analytics is declined."},
+      {"title": "Paid checkout information", "body": "Creem is the payment processor and Merchant of Record for Skin Quick Setup and Custom Skin Early Access. Creem collects and processes checkout details such as name, email, billing country, payment method, order amount, tax, customer ID, checkout ID, and order status under its own privacy terms. This site receives the order identifiers, checkout email, purchased service, amount, currency, and payment status needed to verify and fulfill an order. Full payment-card details are not received or stored by this site."},
+      {"title": "Briefs and private image uploads", "body": "After a verified purchase, the brief may include platform, visual direction, color preference, notes, and one source image. Supabase stores order records and keeps uploaded source images in a private bucket that is not publicly readable. The image is used only to prepare, verify, and deliver the ordered configuration, resolve related support, or comply with a lawful obligation. Paid uploads are not added to the public gallery without separate permission."},
+      {"title": "Service providers and disclosures", "body": "Cloudflare hosts and protects the public website, Supabase provides database, Edge Function, and private storage services, Creem handles payment and tax processing, and Google provides optional analytics. Information may also be disclosed when reasonably necessary to comply with law, respond to valid legal process, protect users or the service, investigate fraud or abuse, or complete a business transfer with appropriate safeguards."},
+      {"title": "Advertising and Google cookies", "body": "The site may use Google advertising products after approval. If ads are enabled, third-party vendors including Google may place or read cookies, use web beacons, IP addresses, or other identifiers to serve, limit, measure, and personalize ads where consent and law allow. Before personalized advertising is enabled for regions that require it, the site will deploy the consent controls required by Google and applicable law. Visitors can also review Google advertising settings or opt-out tools. Personally identifiable information is not intentionally passed to Google in ad requests."},
+      {"title": "Retention and deletion", "body": "Order and payment records are kept for fulfillment, dispute handling, fraud prevention, accounting, and tax obligations. Briefs and source images are kept only as long as reasonably needed to produce and support the order; source uploads are normally removed after the delivery and support period. Analytics retention follows the configured Google Analytics settings. A verified request may ask for access, correction, or deletion, subject to records that must be retained for legal, tax, security, or dispute purposes."},
+      {"title": "Security and international processing", "body": "HTTPS is used in transit, private uploads are not exposed through a public storage policy, and payment webhooks are authenticated with signatures. No online service can guarantee absolute security. Providers may process information in countries other than the visitor's country, using their contractual and legal safeguards where required."},
+      {"title": "Children", "body": "This website is intended for a general developer and desktop-customization audience and is not directed to children under 13. It does not knowingly create behavioral advertising profiles from child-directed activity. A parent or guardian can request deletion if they believe a child submitted personal information."},
+      {"title": "Your choices and contact", "body": "You can decline analytics, clear the saved consent choice in your browser, avoid optional paid services, and refrain from uploading an image. For access, correction, deletion, consent, rights, or privacy questions, use the Contact page or email support@codexdreamskin.top. Verification may be required before accountless order information is disclosed or deleted."}
+    ]
+  },
+  "Terms": {
+    "back": "Back to home",
+    "title": "Terms of Service",
+    "effective": "Effective July 17, 2026",
+    "intro": "These terms explain the boundary between the free guide and the optional paid preparation services. By using the site or placing an order, you agree to the terms that apply to that activity.",
+    "sections": [
+      {"title": "Independent service", "body": "Codex Dream Skin is an independent website and is not affiliated with, sponsored by, or endorsed by OpenAI. Codex and related marks belong to their respective owners. The website does not sell the official Codex application."},
+      {"title": "Free materials", "body": "The install guide, commands, gallery, tutorials, and starter files are provided for informational and self-service use. They may depend on unofficial or experimental tooling and can stop working after a Codex Desktop, operating-system, package, or renderer update. Review commands before running them and keep the restore path available."},
+      {"title": "What paid orders cover", "body": "Skin Quick Setup and Custom Skin Early Access charge for personalization, preparation, readability checking, configuration packaging, and install or restore guidance. Payment does not buy open-source software, third-party artwork, character rights, trademarks, or an OpenAI product license."},
+      {"title": "Delivery", "body": "The stated delivery window is within 72 hours after both payment and a complete, usable brief are received. If the submitted file is corrupt, inaccessible, clearly unsuitable, or missing necessary rights, the delivery window begins after a suitable replacement is received. Delivery is sent to the email used at checkout."},
+      {"title": "Service scope", "body": "Skin Quick Setup includes the listed palette, image-placement assistance when an image is supplied, downloadable configuration, and instructions. Custom Skin Early Access includes one tailored skin based on one customer-supplied image and no revision. Neither service includes original illustration, third-party character licensing, remote access to your computer, or a guarantee that future Codex versions will preserve the same visual result."},
+      {"title": "Your image and instructions", "body": "You must own or have permission to use any uploaded image and instructions. Do not submit illegal, abusive, deceptive, privacy-invasive, infringing, or harmful content. You retain ownership of your submitted material and grant only the limited permission needed to prepare and deliver the ordered configuration."},
+      {"title": "Payments", "body": "Creem acts as the payment processor and Merchant of Record for paid services. Prices are shown in USD. Applicable taxes and payment details are handled in the checkout flow. Do not send payment-card information to the support address."},
+      {"title": "Reasonable use and safety", "body": "Do not use downloads, commands, contact channels, upload endpoints, or payment flows to distribute malware, probe systems, interfere with other users, automate fraudulent traffic, or bypass security controls. Access may be limited when necessary to protect the service or comply with law."},
+      {"title": "Warranty and liability", "body": "The free guide and experimental customization methods are provided without a promise of uninterrupted compatibility. To the extent permitted by law, the site is not liable for indirect loss, lost work, or third-party platform changes. This does not exclude rights or remedies that cannot legally be excluded."},
+      {"title": "Changes and contact", "body": "These terms may be updated when the service, payment flow, or applicable requirements change. Material changes will be reflected by the effective date. Questions can be sent through the Contact page."}
+    ]
+  },
+  "Refund": {
+    "back": "Back to services",
+    "title": "Refund Policy",
+    "effective": "Effective July 17, 2026",
+    "intro": "Skin Quick Setup and Custom Skin Early Access are one-time digital preparation services. The goal is to resolve genuine delivery problems fairly while recognizing that work begins soon after a valid brief is received.",
+    "contact": "Contact support",
+    "sections": [
+      {"title": "Before preparation begins", "body": "A cancellation request made before preparation begins is eligible for a full refund. Contact support promptly from the checkout email and include the order reference. A request is not considered complete until enough information is provided to identify the order."},
+      {"title": "After work begins", "body": "Once personalized preparation has started, a change of mind, preference change, or request for an unlisted revision is normally not refundable. Custom Skin Early Access includes one delivery and no revision. This does not remove any mandatory consumer right that applies in the customer's location."},
+      {"title": "Delivery problems", "body": "Contact support if the promised package is not delivered within 72 hours after a complete brief, the delivered archive cannot be opened, or the package materially omits an item listed for the purchased service. The first remedy may be prompt correction or redelivery. If the service cannot be supplied, a full or appropriate partial refund will be offered."},
+      {"title": "Unsupported or unusable input", "body": "The delivery window pauses when the submitted image is corrupt, inaccessible, too small for a usable result, or clearly lacks the required rights. If a suitable replacement is not provided after a reasonable request, the order may be canceled; any refund may be reduced only for work already completed where permitted by law."},
+      {"title": "How refunds are processed", "body": "Creem is the Merchant of Record and processes approved refunds to the original payment method. Bank and card-network posting times vary. Never send card details by email. Disputes should be raised with support first so the order and delivery evidence can be reviewed."}
+    ]
+  },
+  "CustomSkin": {
+    "headerCta": "Choose a service",
+    "hero": {
+      "eyebrow": "Custom Codex skin service",
+      "title": "A readable skin, prepared for your setup.",
+      "description": "Skip the color guessing and repeated image crops. Choose a fast setup or submit one image for a tailored Codex desktop theme, then receive a downloadable configuration with install and restore instructions.",
+      "compare": "Compare services",
+      "freeGuide": "Keep using the free guide"
+    },
+    "boundary": {
+      "title": "The software stays free.",
+      "description": "Payment covers the hands-on preparation around it: palette selection, image placement, readability checks, configuration packaging, and practical support. It does not purchase the open-source project, the official Codex app, or rights to someone else's artwork.",
+      "items": ["No account required", "Secure Creem checkout", "Private image storage", "72-hour delivery window"]
+    },
+    "pricing": {
+      "title": "Start free. Pay only when preparation saves you time.",
+      "description": "Every visitor can install the project, browse the full pet gallery, download the starter files, and follow the tutorials. The paid options are small, one-time services for people who want a prepared result instead of doing the visual work alone.",
+      "free": {
+        "eyebrow": "Self-service",
+        "name": "Free",
+        "description": "The complete do-it-yourself path for installing, checking, customizing, and restoring your Codex appearance.",
+        "features": ["macOS and Windows install guide", "53-pet searchable gallery", "Copy-ready install commands", "Pet creation starter and tutorial", "Restore and safety guidance"],
+        "cta": "Open the free installer"
+      },
+      "quick": {
+        "eyebrow": "Fast preparation",
+        "name": "Skin Quick Setup",
+        "description": "A compact setup for a clearer color direction and a prepared configuration. Add an image if you want it checked and placed.",
+        "features": ["Custom color palette parameters", "Optional image placement adjustment", "Readability check", "Downloadable configuration", "Install and restore instructions", "Delivery within 72 hours"],
+        "cta": "Get Quick Setup"
+      },
+      "custom": {
+        "eyebrow": "Early access",
+        "name": "Custom Skin",
+        "description": "One tailored skin based on one suitable image you provide, prepared around your chosen visual direction.",
+        "features": ["One tailored Codex skin", "One customer-supplied rights-cleared image", "Readability-tested color treatment", "Downloadable configuration", "Install and restore instructions", "Delivery within 72 hours", "No revision"],
+        "cta": "Order Custom Skin"
+      },
+      "note": "Prices are one-time payments in USD. Taxes, when required, are calculated by Creem at checkout. Review the Terms and Refund Policy before purchasing."
+    },
+    "process": {
+      "title": "From payment to a usable configuration",
+      "steps": [
+        {"title": "Pay securely", "body": "Creem handles checkout, payment processing, and applicable tax collection."},
+        {"title": "Send one short brief", "body": "The return page verifies the order automatically and asks only for the details needed to make the skin."},
+        {"title": "Configuration is prepared", "body": "Color, image placement, and interface readability are checked for the selected service."},
+        {"title": "Receive the package", "body": "The checkout email receives the configuration plus install and restore instructions within 72 hours."}
+      ]
+    },
+    "sourceImage": {
+      "title": "What makes a good source image?",
+      "paragraphs": [
+        "Use an image you created, licensed, purchased with suitable rights, or received permission to use. A public image appearing in search results is not automatically licensed for reuse. The service cannot create rights for a copyrighted character, photograph, logo, or artwork supplied without permission.",
+        "Wide images usually fit a desktop theme better than tall phone wallpapers. Leave a calm area behind the main title and project list, keep the subject away from the composer, and avoid very small text inside the image. PNG, JPEG, WebP, HEIC, and HEIF are accepted up to 15 MB through private storage.",
+        "A Custom Skin order uses one submitted image and has no revision. If the image is unusable—for example, corrupt, too small, or clearly missing necessary rights—the delivery window begins after a suitable replacement is received."
+      ]
+    },
+    "faqTitle": "Service questions",
+    "faq": [
+      {"question": "Am I paying for the open-source Codex skin project?", "answer": "No. The public installer, gallery, and tutorials remain free. Paid orders cover personalization work: selecting readable colors, preparing image placement, producing a configuration, checking the result, and writing install and restore guidance for the order."},
+      {"question": "What happens after checkout?", "answer": "Creem returns you to a verified order page. The page connects the payment automatically and asks only for platform, visual direction, optional color preference, and the image needed for the selected service. No account or copied order number is required."},
+      {"question": "When will the configuration arrive?", "answer": "Delivery is within 72 hours after a complete brief and usable image are received. The finished package is sent to the email used at checkout."},
+      {"question": "Does Custom Skin Early Access include revisions?", "answer": "No. It includes one tailored skin based on the submitted brief. Clear visual direction and a suitable source image help the first delivery match the intended result."}
+    ],
+    "schemaServiceType": "Desktop theme configuration and installation support"
+  },
+  "Home": {
+    "headerCta": "Install free",
+    "hero": {
+      "eyebrow": "Unofficial Codex desktop theme",
+      "title": "Install Codex Dream Skin free.",
+      "description": "Use the free macOS or Windows installer, browse 53 Codex Pets, customize the look, and restore the official desktop appearance whenever you want.",
+      "install": "Install free",
+      "pets": "Browse Codex Pets",
+      "imageAlt": "Codex Dream Skin running on the macOS Codex desktop app",
+      "caption": "Theme preview. Results can change with your image, platform, Codex version, and current package state."
+    },
+    "install": {
+      "title": "Pick your platform. Copy the command.",
+      "description": "This installer panel uses the package mirrored on this site. Read the prerequisites, copy the command, and keep the restore command nearby before you change your Codex desktop theme."
+    },
+    "beforeRun": {
+      "title": "Know what changes before you run it.",
+      "items": [
+        {"title": "Native controls stay live", "body": "The sidebar, project picker, suggestion buttons, task content, menus, and composer remain Codex controls."},
+        {"title": "Official binaries stay intact", "body": "The project uses runtime injection instead of replacing app.asar, the macOS app bundle, or WindowsApps files."},
+        {"title": "Restore is part of the flow", "body": "The installer creates or documents a restore path so you can stop the skin and return to the official appearance."},
+        {"title": "It is still experimental", "body": "Codex updates can change private renderer details. Verify after installation and expect occasional compatibility fixes."}
+      ]
+    },
+    "pets": {
+      "title": "Add a Codex pet beside your theme.",
+      "description": "Codex Pets are small desktop companions installed with a short command. Browse cats, dogs, developer characters, and playful mascots, then open a prepared Codex task for the pet you choose.",
+      "cta": "Open the pet gallery",
+      "imageAlts": ["Spinach cream-gold cat Codex pet", "Nougat black-and-white pixel cat Codex pet", "Maguang developer character Codex pet", "Mianmian fluffy dog Codex pet"]
+    },
+    "realInterface": {
+      "imageAlt": "Themed Codex task view with native text and composer controls",
+      "title": "A Codex desktop skin, not a pasted screenshot.",
+      "paragraphs": [
+        "Codex Dream Skin adds a banner, background art, color treatment, and decorative layers around the existing interface. The intent is to keep everyday work possible: open a project, read a task, type in the composer, use menus, and move between routes.",
+        "Results vary with contrast, image crop, pets, and changing DOM selectors. Use Verify after installation and treat the current project documentation as the authority."
+      ]
+    },
+    "howItWorks": {
+      "title": "How this Codex theme changer works",
+      "description": "Think of it as a temporary visual layer around the official app. This website never reaches into your computer. You download and run the project locally.",
+      "steps": [
+        {"title": "Discover the official app", "body": "On macOS, the scripts find the com.openai.codex app and validate its signature, architecture, Team ID, and bundled Node runtime. On Windows, the scripts locate a registered Microsoft Store Codex package and validate its package identity before launching."},
+        {"title": "Start a local debugging session", "body": "The themed launch starts Codex with Chromium DevTools Protocol available on 127.0.0.1. Loopback prevents network access from other devices, but the port is not authenticated against other software running under your local account."},
+        {"title": "Inject the visual layer", "body": "The injector connects to expected app renderer targets, adds CSS and decorative DOM elements, and keeps watching so the skin can return after reloads or route changes. Native controls are placed above decorative layers and should remain clickable."},
+        {"title": "Verify or restore", "body": "Verify checks the expected skin markers and can save a screenshot for inspection. Restore removes the live skin, stops the recorded injector and debugging session, restores saved appearance settings, and reopens Codex without the theme when requested."}
+      ]
+    },
+    "readableTheme": {
+      "title": "Choose a theme that stays readable.",
+      "paragraphs": [
+        "On Mac, the Customize launcher accepts PNG, JPEG, HEIC, TIFF, and WebP. Source images can be up to 50 MB, while prepared files are limited to 16 MB. Use a wide image at least 2000 pixels across with a calm left side for the home title.",
+        "Contrast matters more than novelty. Pick an image where body text, project names, composer controls, and focus states remain visible. Do not import the composite gallery previews as your wallpaper. They already contain interface artwork and are not intended as banner assets. Use your own licensed image or the bundled abstract demo.",
+        "Windows currently ships a bundled pink decorative theme. Its documentation does not claim the Mac image-picker workflow, so this site does not present custom Windows image upload as an available feature."
+      ],
+      "imageAlt": "Preview of the bundled Codex Dream Skin design on Windows",
+      "caption": "Windows package preview. Public artwork and likeness rights must be cleared before commercial redistribution."
+    },
+    "troubleshooting": {
+      "title": "Fix the common failure paths.",
+      "description": "Start with reversible checks. Keep official Codex usable, and report the exact app, system, and Dream Skin versions in every issue.",
+      "items": [
+        {"title": "The theme only partly appears", "body": "Run Verify first. If native controls work but the decorative layer is incomplete, run Restore, download the newest available package, reinstall, and verify again. Codex renderer changes can make old selectors fail."},
+        {"title": "Mac reports a missing background asset", "body": "The project changelog says version 1.1.2 corrected a bundled theme reference. Download the current package before retrying instead of creating a fake file path."},
+        {"title": "Codex configuration looks wrong", "body": "Stop and use the provided Restore flow. The project keeps a theme backup and recent updates improved clean config round trips. Do not overwrite config.toml with an unrelated template."},
+        {"title": "The Windows result differs from the preview", "body": "The bundled preview is an intended design reference, not a guaranteed pixel match. Confirm Node 22 or newer, then verify both the home screen and a normal task."}
+      ]
+    },
+    "services": {
+      "title": "Want the colors and image prepared for you?",
+      "description": "Keep the full self-service path free, or choose a one-time setup service when you would rather receive a readable palette, prepared configuration, and install instructions. Payment is for personalization and support—not for the open-source software.",
+      "prices": "Quick Setup $4.99 · Custom Skin Early Access $9.99",
+      "cta": "Compare skin services"
+    },
+    "safety": {
+      "title": "The local CDP port is the real security tradeoff.",
+      "description": "Codex Dream Skin binds the debugging port to 127.0.0.1, so it is not exposed to your network. Chromium CDP still has no local process authentication. Untrusted software on the same computer could try to connect. Run trusted software, use Verify, and use Restore when the themed session is no longer needed."
+    },
+    "faqTitle": "Codex Dream Skin FAQ",
+    "faqIntro": "Short answers to the questions people ask before installing a Codex skin, changing a Codex desktop theme, or returning to the official interface.",
+    "faq": [
+      {"question": "Is Codex Dream Skin an official OpenAI product?", "answer": "No. Codex Dream Skin is an independent open-source project. It launches the official Codex desktop app with a local debugging connection and injects visual CSS and decorative elements. It is not affiliated with or endorsed by OpenAI."},
+      {"question": "Does this Codex skin modify app.asar or the official app files?", "answer": "The project documentation says it does not modify the official .app bundle, app.asar, WindowsApps directory, or code signature. The theme is applied at runtime through a Chromium DevTools Protocol connection bound to the local computer."},
+      {"question": "Can I use my own image as a Codex desktop theme?", "answer": "On macOS, yes. After installation, use the Customize desktop launcher or the menu bar control to pick a local image. The current Windows package applies its bundled design and does not yet offer the same image picker."},
+      {"question": "How do I remove Codex Dream Skin?", "answer": "Use the Restore launcher created by the installer or copy the restore command from the platform panel above. Restore stops the injector, closes the saved local debugging session, restores backed-up appearance settings, and can reopen Codex normally."},
+      {"question": "Why did my Codex theme stop working after an update?", "answer": "The skin depends on renderer structure that can change when Codex Desktop updates. Run Restore, download the newest available package, reinstall, and use Verify. If the problem remains, keep the official appearance active until the theme package is updated."},
+      {"question": "What does Codex 皮肤 mean?", "answer": "Codex 皮肤 is the Chinese search term for a Codex skin or Codex theme. This page uses Codex Dream Skin, Codex desktop theme, and Codex 皮肤 to describe the same goal: changing the visual layer of Codex Desktop while keeping native controls interactive."},
+      {"question": "Do I have to pay to use Codex Dream Skin?", "answer": "No. The installer guide, downloads, Codex Pets gallery, pet starter, tutorials, verification steps, and restore guidance are free. The optional $4.99 and $9.99 services charge only for individual palette preparation, image placement, readability checking, configuration packaging, and support."}
+    ],
+    "checksum": {
+      "title": "Check the mirrored ZIP and keep Restore ready.",
+      "description": "The ZIP mirrored on this site was tested for archive integrity on July 16, 2026. Its SHA-256 is shown below so you can confirm the exact file you received. A checksum proves file identity, not safety, so read the prerequisites and never put API keys, auth files, or private screenshots in a theme package.",
+      "download": "Download ZIP"
+    }
+  },
+  "PetPicker": {
+    "searchLabel": "Search 53 Codex pets",
+    "searchPlaceholder": "Search cat, anime, pixel, author, or slug",
+    "format": "Format",
+    "style": "Style",
+    "sort": "Sort",
+    "all": "All",
+    "allStyles": "All styles",
+    "tags": {"cute": "Cute", "anime": "Anime", "pixel": "Pixel", "game": "Game", "mascot": "Mascot", "animated": "Animated"},
+    "newest": "Newest listings",
+    "nameSort": "Name A-Z",
+    "results": "Showing {visible} of {filtered} matches from {total} public pet listings.",
+    "by": "by {author}",
+    "communityPet": "community pet",
+    "showMore": "Show all {count} more pets",
+    "emptyTitle": "No pets match those filters.",
+    "emptyBody": "Reset the search, format, and style controls to reopen the full desktop pet gallery.",
+    "showAll": "Show all pets",
+    "selectedAria": "Selected Codex pet installation",
+    "selectedAlt": "{name} selected desktop pet",
+    "selectedMeta": "{format} pet by {author}",
+    "selectedBody": "This listing uses the published slug {slug}. The link below opens Codex with the exact install command prepared for review.",
+    "installPrompt": "Install this pet: {command}",
+    "install": "Install in Codex",
+    "terminal": "Terminal fallback",
+    "copy": "Copy CLI command",
+    "review": "Review package details"
+  },
+  "PetBuilder": {
+    "title": "How to make your own Codex pet",
+    "intro": "Start with the documented V1 package. It is still supported, uses one fixed sprite grid, and avoids guessing about the newer direction format.",
+    "starterTitle": "Download the V1 starter",
+    "starterBody": "The ZIP contains a valid manifest, a transparent 1536 x 1872 WebP sheet, the nine animation rows, and publishing instructions.",
+    "starterCta": "Download starter ZIP",
+    "starterNote": "The blank sheet is a template, not a finished pet. Replace it with artwork you created or have permission to distribute.",
+    "steps": [
+      {"title": "Draw on a transparent grid", "body": "Keep every frame inside a 192 x 208 pixel cell. The full sheet is eight columns wide and nine rows tall. Keep the pet centered so movement does not jump between frames."},
+      {"title": "Place the nine animation rows", "body": "Row order is part of the format. Put unused cells after the stated frame count on a transparent background."},
+      {"title": "Edit pet.json", "body": "Use a lowercase id with letters, numbers, and hyphens. Keep the filename and spritesheet path unchanged. Valid kinds are object, animal, person, and creature."},
+      {"title": "Validate, publish, and install", "body": "Sign in to the public upload flow, choose pet.json and spritesheet.webp, then fix every validation error. After a slug is published, install it with npx codex-pets add followed by that slug."}
+    ],
+    "validator": "Open the package validator",
+    "rowMap": "Sprite row map",
+    "row": "Row {number}",
+    "frames": "{count} frames",
+    "animationRows": ["Idle", "Run right", "Run left", "Wave", "Jump", "Failed", "Waiting", "Running", "Review"],
+    "manifestTitle": "Manifest template",
+    "copyManifest": "Copy pet.json",
+    "validatorNote": "The public validator checks the manifest schema, allowed kind, filenames, WebP format, and exact sprite dimensions."
+  },
+  "Pets": {
+    "headerCta": "Browse 53 pets",
+    "hero": {
+      "eyebrow": "53 free desktop pets for Codex",
+      "title": "Find and install your Codex pet.",
+      "description": "Browse 53 public pets, open a prepared Codex task, or build your own from the V1 starter.",
+      "choose": "Choose a pet",
+      "make": "Make your own",
+      "previewAria": "Codex pet preview collection",
+      "imageAlts": ["Spinach cream-gold cat Codex pet", "MOJO Apple Codex pet", "Aegis Sentinel Codex pet"]
+    },
+    "how": {
+      "title": "How to get a desktop pet in Codex",
+      "description": "The website prepares the command. Codex or your trusted terminal performs the installation only after you review it.",
+      "steps": [
+        {"title": "Choose a published slug", "body": "Search the gallery by name, author, format, or style. Selecting a card updates the exact package slug in the install panel."},
+        {"title": "Open the prepared task", "body": "Install in Codex uses a codex:// link containing npx codex-pets add and the selected slug. Nothing runs in the page background."},
+        {"title": "Review before approval", "body": "Read the command and package details. If the custom link does not open, copy the same CLI command into a trusted terminal."}
+      ]
+    },
+    "gallery": {
+      "title": "Browse all 53 Codex pets",
+      "description": "Filter public V1 and V2 listings by name, creator, style, or format. Every card uses a real published slug and opens the same prepared installation flow.",
+      "rights": "Pet names, artwork, and character rights remain with their creators and respective owners. Preview copies are shown for package discovery. Open the linked package details for source context and current attribution."
+    },
+    "versions": {
+      "title": "Choose V2 to install. Use V1 to learn the format.",
+      "v2Title": "V2 gallery pets",
+      "v2Body": "Most gallery choices use V2. Pick one when your goal is to install a published companion quickly. Always review the selected slug and its package details before approving the prepared command.",
+      "v1Title": "V1 starter packages",
+      "v1Body": "V1 uses the fixed 1536 × 1872 sprite sheet documented above. It is the clearer starting point for learning cell sizes, animation row order, manifest fields, validation, and the publishing workflow without guessing at newer directions."
+    },
+    "definition": {
+      "title": "What is a Codex desktop pet?",
+      "paragraphs": ["A desktop pet is a small animated or illustrated companion that stays near your work instead of taking over the whole screen. Codex Pets packages that companion under a short install slug, with visual states for idle, movement, waiting, review, and other actions.", "A pet changes atmosphere, not the quality of generated code. Pick artwork that stays readable at a small size, does not hide controls, and comes from a package you have reviewed."]
+    },
+    "xGallery": {
+      "title": "Codex pet ideas seen on X",
+      "description": "Public experiments show the idea moving beyond one gallery: pets appear beside coding sessions, inside custom pet collections, and even on a watch-sized screen. These images are references to the linked public posts, not downloadable packs hosted by this site.",
+      "postedBy": "Posted by {handle}",
+      "view": "View post on X",
+      "rights": "Screenshots are shown for commentary and discovery. Rights remain with the original creators and platform users. Follow the linked post for the source context.",
+      "items": [
+        {"alt": "Public X post showing Codex pets inside a desktop coding workflow", "title": "Codex pets in a real workflow"},
+        {"alt": "Public X post showing a Petdex desktop pet experiment", "title": "A Petdex-style experiment"},
+        {"alt": "Public X post showing a custom pet beside Codex work", "title": "A custom Codex companion"},
+        {"alt": "Public X post showing a community Codex pet hub interface", "title": "A community pet hub"},
+        {"alt": "Public X post showing Codex pets adapted to an Apple Watch", "title": "Codex pets on Apple Watch"}
+      ]
+    },
+    "safety": {
+      "title": "Are desktop pets safe?",
+      "description": "Treat every desktop pet as software plus visual assets. A cute preview is not a security review, so the command and package still deserve the same attention as any developer tool.",
+      "items": ["Read the exact npx command and selected slug before approval.", "Use a current Node.js and npm setup from sources you trust.", "Do not paste API keys, session tokens, or private project files into an install prompt.", "Open the original pet listing when you need current package details or creator attribution.", "Remove or replace a pet if it causes unexpected behavior, resource use, or visual obstruction."]
+    },
+    "faqTitle": "Codex Pets FAQ",
+    "faqIntro": "Direct answers about installation, free desktop pets, safety, and what happens when you select the one-click link.",
+    "faq": [
+      {"question": "What are Codex Pets?", "answer": "Codex Pets are small visual companions made to appear inside the Codex desktop experience. Each public listing has a creator, preview, format, and install slug. This page curates 53 public listings and prepares the published npx install command for the pet you choose."},
+      {"question": "How do I get a desktop pet in Codex?", "answer": "Choose a pet in the gallery and select Install in Codex. The link opens a new Codex task containing the command npx codex-pets add followed by the selected slug. Review the task and command before allowing Codex to run it. If the custom link does not open, copy the Terminal fallback instead."},
+      {"question": "Are these free desktop pets?", "answer": "The listed pets use the public Codex Pets installation flow and do not show a purchase price. Individual character, artwork, and brand rights still belong to their respective owners. Free access to an install package does not grant commercial reuse or redistribution rights."},
+      {"question": "Are desktop pets safe?", "answer": "A desktop pet is code and assets installed on your computer, so review the package source, command, and permissions before running it. Use a current Node.js and npm environment, avoid commands copied from unknown replies, and remove a pet if its behavior or resource use is unexpected."},
+      {"question": "Do I need to upload an image or create an account?", "answer": "No. This curated gallery does not accept uploads and does not require an account. Selecting a pet only changes the prepared install link and CLI command in your browser. Installation happens after you open Codex or run the command locally."},
+      {"question": "How do I make my own Codex pet?", "answer": "Use the V1 starter on this page. Replace the transparent 1536 x 1872 WebP sheet with nine rows of animation frames, edit pet.json, then use the public signed-in upload flow to validate and publish the package. V1 remains supported and has a fixed 8-column by 9-row format."}
+    ]
+  },
+  "Order": {
+    "success": {
+      "headerCta": "Service details",
+      "eyebrow": "Secure order handoff",
+      "title": "One short brief, then the setup work begins.",
+      "description": "The payment details in this return link are checked directly with Creem. Your source image is stored privately and is not added to the public gallery.",
+      "loading": "Loading secure order details..."
+    },
+    "cancel": {
+      "headerCta": "Service details",
+      "title": "No payment was completed.",
+      "description": "Nothing was submitted for production. The free installer, gallery, tutorials, and restore guide remain available without checkout.",
+      "services": "Review services",
+      "freeGuide": "Use the free guide"
+    },
+    "brief": {
+      "errors": {
+        "missingCheckout": "No completed checkout was found in this link.",
+        "verification": "The payment could not be confirmed yet.",
+        "submission": "Your brief could not be submitted."
+      },
+      "checkingTitle": "Confirming your payment",
+      "checkingBody": "This normally takes only a few seconds. Keep this page open.",
+      "verificationTitle": "Payment confirmation needs another moment",
+      "verificationFollowUp": "Refresh this page after 15 seconds. If the message remains, use the contact page and include the address of this page so the order can be checked securely.",
+      "completeTitle": "Your brief is in the production queue.",
+      "completeBody": "Reference {reference}. Delivery is sent to the email used at checkout within 72 hours. The package includes the prepared configuration plus install and restore instructions.",
+      "paymentConfirmed": "Payment confirmed",
+      "orderMeta": "Order ending {reference} · Within 72 hours",
+      "intro": "Complete one short brief. The checkout email is already connected to the order, so there is no account to create and no order number to copy.",
+      "platform": "Codex platform",
+      "visualDirection": "Visual direction",
+      "directions": {"soft": "Soft and calm", "dark": "Dark and focused", "bright": "Bright and playful", "minimal": "Minimal", "surprise": "Choose for me"},
+      "accent": "Favorite accent color",
+      "optional": "(optional)",
+      "accentPlaceholder": "For example: forest green, warm orange, or #58CC02",
+      "customImage": "Image for your custom skin",
+      "backgroundImage": "Background image (optional)",
+      "imageHelp": "PNG, JPEG, WebP, HEIC, or HEIF up to 15 MB. A wide image with a calm area behind text usually produces the clearest result.",
+      "notes": "Anything important?",
+      "notesPlaceholder": "Examples: keep the composer dark, avoid pink, place the subject on the right.",
+      "rights": "I created or have permission to use any image I upload. If I do not upload an image, I authorize the use of rights-cleared or abstract assets only.",
+      "earlyAccess": "Early Access includes one tailored skin and no revision. It does not include original illustration or a license for third-party characters.",
+      "submitting": "Submitting securely...",
+      "submit": "Submit my skin brief",
+      "delivery": "Within 72 hours"
+    }
+  },
+  "NotFound": {
+    "eyebrow": "Page not found",
+    "title": "This skin route does not exist.",
+    "description": "Return to the installer to choose macOS or Windows, copy the current command, and review the restore instructions.",
+    "back": "Back to installer"
+  }
+}

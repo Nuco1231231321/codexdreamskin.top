@@ -1,0 +1,543 @@
+{
+  "Common": {
+    "brandHome": "Codex Dream Skin 中文首页",
+    "navigationLabel": "主导航",
+    "nav": {
+      "install": "安装",
+      "pets": "Codex Pets",
+      "customSkin": "定制皮肤",
+      "safety": "安全说明",
+      "contact": "联系"
+    },
+    "languageSwitcher": {
+      "ariaLabel": "Switch to English",
+      "shortLabel": "EN"
+    },
+    "footer": {
+      "navigationLabel": "页脚导航",
+      "disclaimer": "Codex Dream Skin 提供独立的安装指南、宠物画廊和可选配置服务，与 OpenAI 没有隶属或背书关系。",
+      "install": "安装",
+      "pets": "Codex Pets",
+      "customSkin": "定制皮肤",
+      "about": "关于",
+      "contact": "联系",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "refund": "退款政策",
+      "cookieSettings": "Cookie 设置"
+    },
+    "cookie": {
+      "ariaLabel": "分析偏好",
+      "title": "选择分析偏好",
+      "description": "不启用分析也能使用全部基础功能。接受后，Google Analytics 会帮助我们了解哪些安装指南和画廊页面更有用；你可以随时从页脚修改选择。",
+      "essential": "仅使用必要功能",
+      "accept": "接受分析"
+    },
+    "copy": {
+      "copied": "已复制",
+      "success": "命令已复制到剪贴板。",
+      "error": "复制失败，请手动选择并复制上方命令。"
+    },
+    "checkout": {
+      "opening": "正在打开安全结账页面……",
+      "unavailable": "结账服务暂时不可用。",
+      "errorFollowUp": "请重试；如果问题持续，请通过联系页面获取帮助。"
+    }
+  },
+  "Metadata": {
+    "home": {
+      "title": "Codex 皮肤：免费安装 Dream Skin 与 53 个 Pets",
+      "description": "免费安装 Codex Dream Skin，支持 macOS 和 Windows；浏览 53 个 Codex Pets，了解自定义图片、安全验证和一键恢复官方外观。",
+      "imageAlt": "Codex Dream Skin 中文安装指南与 Codex Pets 画廊",
+      "keywords": ["Codex 皮肤", "Codex皮肤", "Codex Dream Skin", "Codex 换肤", "Codex 桌面主题", "Codex Pets", "Codex 自定义主题"]
+    },
+    "pets": {
+      "title": "Codex Pets 画廊：53 个免费桌面宠物",
+      "description": "浏览 53 个免费 Codex Pets，打开准备好的安装任务，复制 CLI 命令，并学习制作自己的 Codex 桌面宠物。",
+      "imageAlt": "包含 53 个免费桌面宠物的 Codex Pets 画廊",
+      "keywords": ["Codex Pets", "Codex 宠物", "Codex 桌面宠物", "免费桌面宠物", "Codex pet 画廊", "Codex pet 教程"]
+    },
+    "customSkin": {
+      "title": "Codex 皮肤定制服务：$4.99 起",
+      "description": "可选 Codex 皮肤配置服务从 $4.99 起，单套定制皮肤为 $9.99；免费安装、Pets 画廊和教程保持免费。",
+      "imageAlt": "Codex 皮肤定制与配置服务",
+      "keywords": ["Codex 皮肤定制", "Codex 皮肤配置", "Codex 主题服务", "Codex 自定义主题", "Codex 皮肤价格"]
+    },
+    "about": {
+      "title": "关于 Codex Dream Skin",
+      "description": "了解 Codex Dream Skin 如何维护安装步骤、Pets 画廊、安全边界与可选配置服务。",
+      "imageAlt": "关于 Codex Dream Skin",
+      "keywords": ["Codex Dream Skin 关于", "Codex 皮肤指南", "Codex Dream Skin 安全"]
+    },
+    "contact": {
+      "title": "联系 Codex Dream Skin",
+      "description": "获取 Codex 皮肤安装、订单、隐私请求、内容更正以及版权与署名问题的帮助。",
+      "imageAlt": "联系 Codex Dream Skin 支持",
+      "keywords": ["Codex Dream Skin 联系", "Codex 皮肤支持", "Codex 主题帮助"]
+    },
+    "privacy": {
+      "title": "隐私政策 | Codex Dream Skin",
+      "description": "了解 Codex Dream Skin 如何处理分析同意、Creem 结账信息、Supabase 订单记录、私有图片上传与隐私请求。",
+      "imageAlt": "Codex Dream Skin 隐私政策",
+      "keywords": ["Codex Dream Skin 隐私", "分析同意", "私有图片上传"]
+    },
+    "terms": {
+      "title": "服务条款 | Codex Dream Skin",
+      "description": "适用于免费安装器、Pets 画廊、下载、图片权利、Creem 支付、交付与可选配置服务的条款。",
+      "imageAlt": "Codex Dream Skin 服务条款",
+      "keywords": ["Codex Dream Skin 条款", "Codex 皮肤服务条款", "Codex 皮肤交付"]
+    },
+    "refund": {
+      "title": "退款政策 | Codex Dream Skin",
+      "description": "Quick Setup 与 Custom Skin Early Access 的退款和取消条件，包括交付问题与无法使用的源图片。",
+      "imageAlt": "Codex Dream Skin 退款政策",
+      "keywords": ["Codex Dream Skin 退款", "定制皮肤退款政策", "Codex 皮肤取消"]
+    },
+    "orderSuccess": {
+      "title": "提交皮肤需求 | Codex Dream Skin",
+      "description": "确认 Codex Dream Skin 订单，并提交交付所需的图片与偏好。",
+      "imageAlt": "完成 Codex Dream Skin 订单需求",
+      "keywords": ["Codex Dream Skin 订单", "定制皮肤需求"]
+    },
+    "orderCancel": {
+      "title": "结账已取消 | Codex Dream Skin",
+      "description": "付款未完成。返回免费 Codex 皮肤工具，或重新查看可选配置服务。",
+      "imageAlt": "Codex Dream Skin 结账已取消",
+      "keywords": ["Codex Dream Skin 结账", "Codex 皮肤服务"]
+    }
+  },
+  "InstallPanel": {
+    "platformLabel": "选择操作系统",
+    "download": "下载 ZIP",
+    "restore": "恢复官方 Codex 外观",
+    "mac": {
+      "title": "在 Mac 安装 Codex Dream Skin",
+      "description": "支持 Apple Silicon 与 Intel Mac。安装前先启动一次官方 Codex 桌面端，确保配置文件已经生成。Mac 安装包会校验并复用 Codex 自带的 Node 运行时，因此不要求全局安装 Node.js。",
+      "requirements": ["运行安装器前关闭 Codex。", "安装包通过本站 HTTPS 地址下载。", "安装后会创建启动、自定义、验证和恢复入口。"],
+      "fastInstall": "终端快速安装",
+      "copyInstall": "复制 Mac 安装命令",
+      "copyRestore": "复制恢复命令"
+    },
+    "windows": {
+      "title": "在 Windows 安装 Codex Dream Skin",
+      "description": "Windows 脚本适用于 Microsoft Store 安装的官方 Codex。请先安装 Node.js 22 或更高版本并关闭 Codex，再运行安装和启动脚本。当前 Windows 版本使用内置主题，暂不提供 Mac 版的图片选择器。",
+      "requirements": ["需要 Node.js 22 或更高版本。", "安装前关闭所有 Codex 窗口。", "启动前会检查 Store 安装包身份。"],
+      "fastInstall": "PowerShell 安装",
+      "copyInstall": "复制 Windows 安装命令",
+      "copyRestore": "复制恢复命令"
+    }
+  },
+  "About": {
+    "back": "返回安装页面",
+    "title": "关于 Codex Dream Skin",
+    "intro": "codexdreamskin.top 帮助用户安装、理解并安全恢复 Codex Desktop 的非官方视觉层，同时整理公开的 Codex Pets，并提供可选的配置准备服务。本站独立运营，与 OpenAI 没有隶属、赞助或背书关系。",
+    "checkingTitle": "信息如何核对",
+    "checkingBody": "安装命令、系统要求、自定义限制、恢复行为和安全说明均对照当前公开项目文档核查，并在本站可复制的安装流程中验证。Codex 版本、平台、图片和渲染结构都可能变化，因此本站不会把视觉效果描述为保证像素完全一致。",
+    "providesTitle": "本站提供什么",
+    "provides": [
+      {"title": "免费实用入口", "body": "安装命令、平台说明、恢复指南、53 个宠物条目、筛选器和宠物制作模板无需账号或付款即可使用。"},
+      {"title": "明确的付费边界", "body": "付费订单只覆盖个人配置准备和支持，不出售开源软件、官方 Codex 应用或第三方图片权利。"},
+      {"title": "公开安全限制", "body": "指南会解释本机调试、兼容性风险、图片权利、恢复方法，以及桌面端更新后可能需要新版主题包。"},
+      {"title": "可读的交付内容", "body": "可选付费包包含整理好的配置、安装和恢复说明，而不是只交付无法理解的文件。"}
+    ],
+    "correctionsTitle": "更正与权利请求",
+    "correctionsBody": "创作者、权利人或用户可以通过联系页面报告不准确陈述、失效安装路径、不安全说明、署名问题或图片权利问题。审核期间，相关内容可以被更正或移除。",
+    "contact": "联系本站"
+  },
+  "Contact": {
+    "back": "返回首页",
+    "title": "联系我们",
+    "intro": "如需处理付费订单、安装问题、隐私或删除请求、事实更正、画廊版权与权利问题，请联系我们。消息通常会在两个工作日内查看。",
+    "emailTitle": "邮件支持",
+    "emailBody": "订单问题请使用结账时的邮箱发送邮件，并提供确认页面显示的订单参考号。不要发送密码、API Key、Codex 对话或无关的私有文件。",
+    "includeTitle": "建议提供的信息",
+    "items": [
+      {"title": "安装帮助", "body": "说明系统平台、已知的 Codex 版本、失败的具体步骤与可见错误信息。截图中请移除私有路径和项目名称。"},
+      {"title": "订单帮助", "body": "提供结账邮箱、订单参考号、所选服务和问题简述。切勿发送银行卡信息。"},
+      {"title": "权利或署名", "body": "指出具体画廊条目或页面、你与作品的关系，以及可用于核实主张的可靠方式。"},
+      {"title": "隐私请求", "body": "说明你希望访问、更正还是删除订单、需求、上传文件或分析相关信息。"}
+    ]
+  },
+  "Privacy": {
+    "back": "返回首页",
+    "title": "隐私政策",
+    "effective": "生效日期：2026 年 7 月 17 日",
+    "intro": "本政策说明你浏览免费网站、同意分析、创建付费订单、上传源图片或联系支持时会涉及哪些信息。",
+    "request": "提交隐私请求",
+    "sections": [
+      {"title": "免费网站使用的信息", "body": "安装器、画廊、教程、下载和复制按钮不要求创建账号。托管与安全服务商可能处理 IP 地址、浏览器类型、请求 URL、时间戳和安全信号等普通请求信息。只有在你点击复制按钮后，复制功能才会使用浏览器剪贴板。免费网站安装流程不会接收 Codex 对话、项目内容、本地路径、API Key 或桌面凭据。"},
+      {"title": "分析同意", "body": "只有在你选择“接受分析”后，Google Analytics 4 才会加载。接受后，Google 可能处理页面浏览、互动事件、设备与浏览器信息、由 IP 地址推断的大致位置以及用于衡量会话的标识符。分析存储默认拒绝。你的选择保存在浏览器中，并可通过页脚的 Cookie 设置修改。拒绝分析不会影响网站基础功能。"},
+      {"title": "付费结账信息", "body": "Creem 是 Skin Quick Setup 与 Custom Skin Early Access 的支付处理商和记录商户。Creem 会依据其隐私条款处理姓名、邮箱、账单国家、支付方式、订单金额、税费、客户 ID、结账 ID 和订单状态等信息。本站仅接收验证和履行订单所需的订单标识、结账邮箱、购买服务、金额、币种与支付状态，不接收或保存完整银行卡信息。"},
+      {"title": "需求与私有图片上传", "body": "付款验证后，需求表可能包含系统平台、视觉方向、颜色偏好、备注和一张源图片。Supabase 保存订单记录，并将源图片放在不可公开读取的私有存储桶中。图片只用于准备、验证和交付所购配置、处理相关支持或履行法律义务。未经单独许可，付费上传内容不会加入公开画廊。"},
+      {"title": "服务商与披露", "body": "Cloudflare 托管并保护公开网站，Supabase 提供数据库、Edge Function 和私有存储，Creem 处理支付与税务，Google 提供可选分析。为遵守法律、响应有效法律程序、保护用户或服务、调查欺诈或滥用，或在具备适当保障的业务转移中，信息也可能在合理必要范围内披露。"},
+      {"title": "广告与 Google Cookie", "body": "网站获批后可能使用 Google 广告产品。启用广告时，包括 Google 在内的第三方供应商可能在同意和法律允许的范围内放置或读取 Cookie，使用网络信标、IP 地址或其他标识符来投放、限制、衡量和个性化广告。在需要同意的地区启用个性化广告前，本站会部署 Google 和适用法律要求的同意控制。访客也可使用 Google 广告设置或退出工具。本站不会故意在广告请求中向 Google 传递可识别个人身份的信息。"},
+      {"title": "保留与删除", "body": "订单和支付记录会为履约、争议处理、反欺诈、会计与税务义务保留。需求和源图片只在制作与支持订单所需的合理期限内保留；源文件通常会在交付与支持期结束后删除。分析数据保留遵循 Google Analytics 配置。经验证的请求可要求访问、更正或删除，但法律、税务、安全或争议所需记录可能必须继续保留。"},
+      {"title": "安全与跨境处理", "body": "传输使用 HTTPS，私有上传不会通过公开存储策略暴露，支付 Webhook 使用签名验证。任何在线服务都无法保证绝对安全。服务商可能在访客所在国家以外处理信息，并在需要时采用其合同与法律保障。"},
+      {"title": "儿童", "body": "本网站面向一般开发者和桌面定制用户，不以 13 岁以下儿童为对象，也不会故意基于面向儿童的活动创建行为广告画像。如果家长或监护人认为儿童提交了个人信息，可以请求删除。"},
+      {"title": "你的选择与联系方式", "body": "你可以拒绝分析、清除浏览器中保存的同意选择、不使用可选付费服务，并且不上传图片。关于访问、更正、删除、同意、权利或隐私问题，请使用联系页面或发送邮件至 support@codexdreamskin.top。披露或删除无账号订单信息前可能需要验证身份。"}
+    ]
+  },
+  "Terms": {
+    "back": "返回首页",
+    "title": "服务条款",
+    "effective": "生效日期：2026 年 7 月 17 日",
+    "intro": "本条款说明免费指南与可选付费准备服务之间的边界。使用网站或创建订单即表示你同意适用于相应活动的条款。",
+    "sections": [
+      {"title": "独立服务", "body": "Codex Dream Skin 是独立网站，与 OpenAI 没有隶属、赞助或背书关系。Codex 及相关标识属于各自权利人。本站不出售官方 Codex 应用。"},
+      {"title": "免费材料", "body": "安装指南、命令、画廊、教程和模板文件用于信息参考与自助使用。它们可能依赖非官方或实验性工具，并可能在 Codex Desktop、操作系统、安装包或渲染器更新后失效。运行前请检查命令，并保留恢复入口。"},
+      {"title": "付费订单包含什么", "body": "Skin Quick Setup 与 Custom Skin Early Access 的费用用于个性化、准备、可读性检查、配置打包以及安装或恢复指导。付款不代表购买开源软件、第三方图片、角色权利、商标或 OpenAI 产品许可。"},
+      {"title": "交付", "body": "在付款和完整可用的需求均收到后，标示的交付时间为 72 小时内。如果提交文件损坏、无法访问、明显不适用或缺少必要权利，交付计时会在收到合适替代文件后开始。交付会发送到结账所用邮箱。"},
+      {"title": "服务范围", "body": "Skin Quick Setup 包含列出的配色、提供图片时的图片位置协助、可下载配置和说明。Custom Skin Early Access 包含一套基于一张客户图片的定制皮肤，不含修改。两项服务均不包含原创插画、第三方角色许可、远程访问电脑，也不保证未来 Codex 版本保持相同视觉效果。"},
+      {"title": "你的图片与说明", "body": "你必须拥有或获准使用上传的图片和说明。请勿提交违法、辱骂、欺骗、侵犯隐私、侵权或有害内容。你保留所提交材料的所有权，仅授予准备和交付所购配置所需的有限许可。"},
+      {"title": "支付", "body": "Creem 是付费服务的支付处理商和记录商户。价格以美元显示，适用税费和支付信息在结账流程中处理。请勿向支持邮箱发送银行卡信息。"},
+      {"title": "合理使用与安全", "body": "不得使用下载、命令、联系渠道、上传端点或支付流程传播恶意软件、探测系统、干扰其他用户、制造欺诈流量或绕过安全控制。为保护服务或遵守法律，访问可能受到限制。"},
+      {"title": "保证与责任", "body": "免费指南和实验性定制方法不承诺持续兼容。在法律允许范围内，本站不对间接损失、工作丢失或第三方平台变更负责。本条款不排除法律上不能排除的权利或救济。"},
+      {"title": "变更与联系", "body": "服务、支付流程或适用要求变化时，本条款可能更新。重大变化会通过生效日期体现。如有问题，请通过联系页面发送。"}
+    ]
+  },
+  "Refund": {
+    "back": "返回服务页面",
+    "title": "退款政策",
+    "effective": "生效日期：2026 年 7 月 17 日",
+    "intro": "Skin Quick Setup 与 Custom Skin Early Access 是一次性数字准备服务。本政策旨在公平处理真实交付问题，同时说明收到有效需求后工作会很快开始。",
+    "contact": "联系支持",
+    "sections": [
+      {"title": "准备工作开始前", "body": "在准备工作开始前提出取消请求，可获得全额退款。请尽快使用结账邮箱联系支持并提供订单参考号。只有提供足以识别订单的信息后，请求才视为完整。"},
+      {"title": "工作开始后", "body": "个性化准备开始后，因改变主意、偏好变化或要求未列出的修改，通常不能退款。Custom Skin Early Access 只包含一次交付且不含修改。本条款不影响客户所在地法律规定的强制性消费者权利。"},
+      {"title": "交付问题", "body": "如果完整需求提交后 72 小时内未收到承诺文件、交付压缩包无法打开，或文件实质缺少所购服务列出的项目，请联系支持。首选补救可能是及时修正或重新交付；如果无法提供服务，将提供全额或适当的部分退款。"},
+      {"title": "不支持或无法使用的输入", "body": "提交图片损坏、无法访问、尺寸过小无法获得可用效果，或明显缺少必要权利时，交付计时会暂停。如果在合理请求后仍未提供合适替代文件，订单可能被取消；在法律允许时，退款只会按已经完成的工作适当扣减。"},
+      {"title": "退款处理方式", "body": "Creem 是记录商户，会把批准的退款退回原支付方式。银行和卡组织的入账时间可能不同。切勿通过邮件发送银行卡信息。建议先向支持提出争议，以便核查订单和交付证据。"}
+    ]
+  },
+  "CustomSkin": {
+    "headerCta": "选择服务",
+    "hero": {
+      "eyebrow": "Codex 皮肤定制服务",
+      "title": "为你的环境准备一套清晰易用的皮肤。",
+      "description": "不必反复猜颜色和裁切图片。你可以选择快速配置，或提交一张图片制作一套 Codex 桌面主题，并获得可下载配置、安装说明和恢复说明。",
+      "compare": "比较服务",
+      "freeGuide": "继续使用免费指南"
+    },
+    "boundary": {
+      "title": "软件本身保持免费。",
+      "description": "费用只覆盖实际的配置准备工作：选择配色、调整图片位置、检查可读性、打包配置和提供实用支持。它不代表购买开源项目、官方 Codex 应用或他人图片的权利。",
+      "items": ["无需创建账号", "Creem 安全结账", "图片私有存储", "72 小时交付窗口"]
+    },
+    "pricing": {
+      "title": "先免费使用，只在人工准备能节省时间时付费。",
+      "description": "所有访客都可以安装项目、浏览完整 Pets 画廊、下载模板并阅读教程。付费项目只是小额一次性服务，适合希望直接获得整理结果，而不想独自完成视觉调整的用户。",
+      "free": {
+        "eyebrow": "自助使用",
+        "name": "免费",
+        "description": "完整的自己动手流程，用于安装、检查、自定义和恢复 Codex 外观。",
+        "features": ["macOS 与 Windows 安装指南", "可搜索的 53 个 Pets 画廊", "可直接复制的安装命令", "宠物制作模板与教程", "恢复与安全说明"],
+        "cta": "打开免费安装器"
+      },
+      "quick": {
+        "eyebrow": "快速准备",
+        "name": "Skin Quick Setup",
+        "description": "用于获得更清晰配色方向和整理好配置的小型服务；如提供图片，也会检查并调整图片位置。",
+        "features": ["自定义配色参数", "可选图片位置调整", "可读性检查", "可下载配置", "安装与恢复说明", "72 小时内交付"],
+        "cta": "购买 Quick Setup"
+      },
+      "custom": {
+        "eyebrow": "抢先体验",
+        "name": "Custom Skin",
+        "description": "根据你提供的一张合适图片和所选视觉方向，准备一套定制皮肤。",
+        "features": ["一套 Codex 定制皮肤", "一张客户提供且权利清晰的图片", "经过可读性检查的配色处理", "可下载配置", "安装与恢复说明", "72 小时内交付", "不含修改"],
+        "cta": "订购 Custom Skin"
+      },
+      "note": "价格均为美元一次性付款。需要时，Creem 会在结账时计算税费。购买前请阅读服务条款与退款政策。"
+    },
+    "process": {
+      "title": "从付款到可用配置",
+      "steps": [
+        {"title": "安全付款", "body": "Creem 负责结账、支付处理和适用税费。"},
+        {"title": "提交一份简短需求", "body": "返回页面会自动验证订单，只询问制作皮肤实际需要的信息。"},
+        {"title": "准备配置", "body": "根据所选服务检查颜色、图片位置和界面可读性。"},
+        {"title": "接收文件", "body": "72 小时内，结账邮箱会收到配置、安装说明和恢复说明。"}
+      ]
+    },
+    "sourceImage": {
+      "title": "怎样的源图片更合适？",
+      "paragraphs": [
+        "请使用自己创作、购买了适当许可、获得授权或明确获准使用的图片。图片公开出现在搜索结果中，不等于自动获得再使用许可。本服务不能为未经许可提交的受版权保护角色、照片、Logo 或艺术作品创造使用权。",
+        "横图通常比竖屏手机壁纸更适合桌面主题。主标题和项目列表背后应留出平静区域，主体不要遮挡输入框，并避免图片内部出现过小文字。可通过私有存储上传不超过 15 MB 的 PNG、JPEG、WebP、HEIC 或 HEIF。",
+        "Custom Skin 订单只使用一张提交图片且不含修改。如果图片损坏、尺寸太小或明显缺少必要权利，交付计时会在收到合适替代图片后开始。"
+      ]
+    },
+    "faqTitle": "服务常见问题",
+    "faq": [
+      {"question": "付款是在购买开源 Codex 皮肤项目吗？", "answer": "不是。公开安装器、画廊和教程始终免费。付费订单只覆盖个性化工作，包括选择可读配色、准备图片位置、生成配置、检查效果，以及为订单整理安装与恢复说明。"},
+      {"question": "结账后会发生什么？", "answer": "Creem 会返回经过验证的订单页面。页面会自动关联付款，只询问平台、视觉方向、可选颜色偏好，以及所选服务需要的图片。无需创建账号，也不用复制订单号。"},
+      {"question": "配置什么时候交付？", "answer": "收到完整需求和可用图片后 72 小时内交付，完成的文件会发送到结账所用邮箱。"},
+      {"question": "Custom Skin Early Access 包含修改吗？", "answer": "不包含。它包括根据提交需求制作的一套皮肤。清晰的视觉方向和合适的源图片有助于首次交付更贴近预期。"}
+    ],
+    "schemaServiceType": "桌面主题配置与安装支持"
+  },
+  "Home": {
+    "headerCta": "免费安装",
+    "hero": {
+      "eyebrow": "免费 Codex 桌面端主题",
+      "title": "免费安装 Codex Dream Skin 皮肤。",
+      "description": "支持 macOS 与 Windows，提供可复制的安装命令、53 个 Codex Pets、自定义图片说明、验证步骤和官方外观恢复方法。",
+      "install": "开始免费安装",
+      "pets": "浏览 53 个 Pets",
+      "imageAlt": "Codex Dream Skin 在 macOS Codex 桌面端中的实际效果",
+      "caption": "实际效果会受到图片、系统、Codex 版本和安装包版本影响。安装后请运行 Verify 检查。"
+    },
+    "install": {
+      "title": "选择系统，复制命令，保留恢复入口。",
+      "description": "本页安装面板使用本站镜像包。运行前请阅读系统要求、复制安装命令，并把 Restore 恢复命令保存在方便找到的位置。"
+    },
+    "beforeRun": {
+      "title": "安装前先了解它会改变什么。",
+      "items": [
+        {"title": "原生控件保持可用", "body": "侧栏、项目选择、建议按钮、任务正文、菜单和输入框仍然是 Codex 原生控件。"},
+        {"title": "不替换官方程序文件", "body": "主题通过运行时注入实现，不会替换 app.asar、macOS 应用包或 WindowsApps 文件。"},
+        {"title": "恢复流程已包含在内", "body": "安装器会创建或说明 Restore 路径，让你停止皮肤并返回官方外观。"},
+        {"title": "它仍是实验性方案", "body": "Codex 更新可能改变内部渲染结构。安装后应运行 Verify，并预期偶尔需要兼容性修复。"}
+      ]
+    },
+    "pets": {
+      "title": "给 Codex 加一个桌面宠物。",
+      "description": "Codex Pets 是通过短命令安装的小型桌面伙伴。你可以浏览猫、狗、开发者角色和趣味吉祥物，然后为选中的宠物打开准备好的 Codex 任务。",
+      "cta": "打开 Pets 画廊",
+      "imageAlts": ["菠菜奶油金色猫咪 Codex Pet", "牛轧糖黑白像素猫 Codex Pet", "码光开发者角色 Codex Pet", "棉棉毛绒小狗 Codex Pet"]
+    },
+    "realInterface": {
+      "imageAlt": "使用 Codex Dream Skin 的任务页面与原生输入控件",
+      "title": "它是 Codex 桌面皮肤，不是覆盖上去的截图。",
+      "paragraphs": [
+        "Codex Dream Skin 会在现有界面周围增加横幅、背景图、颜色处理和装饰层。目标是保持日常工作可用：打开项目、阅读任务、在输入框中输入、使用菜单并切换页面。",
+        "效果会受到对比度、图片裁切、Pets 和不断变化的 DOM 选择器影响。安装后请使用 Verify，并以当前项目文档为准。"
+      ]
+    },
+    "howItWorks": {
+      "title": "Codex 换肤是怎样工作的？",
+      "description": "可以把它理解为官方应用周围的临时视觉层。本站不会远程进入你的电脑；项目由你下载并在本机运行。",
+      "steps": [
+        {"title": "识别官方应用", "body": "macOS 脚本会查找 com.openai.codex 应用，并验证签名、架构、Team ID 和自带 Node 运行时。Windows 脚本会查找已注册的 Microsoft Store Codex 包，并在启动前验证包身份。"},
+        {"title": "建立本机调试会话", "body": "主题启动时会让 Chromium DevTools Protocol 在 127.0.0.1 上可用。回环地址阻止其他设备从网络访问，但该端口不会验证同一用户账户下的其他本机软件。"},
+        {"title": "添加视觉层", "body": "注入器连接预期的应用渲染目标，加入 CSS 和装饰 DOM 元素，并持续检查，使皮肤在刷新或切换页面后重新出现。原生控件位于装饰层上方，应保持可点击。"},
+        {"title": "验证或恢复", "body": "Verify 会检查预期的皮肤标记，并可保存截图供检查。Restore 会移除当前皮肤、停止记录的注入器与调试会话、恢复保存的外观设置，并按需重新打开不带主题的 Codex。"}
+      ]
+    },
+    "readableTheme": {
+      "title": "选择一张保持文字清晰的主题图片。",
+      "paragraphs": [
+        "Mac 的 Customize 入口支持 PNG、JPEG、HEIC、TIFF 与 WebP。源图片最大 50 MB，处理后的文件限制为 16 MB。建议使用至少 2000 像素宽的横图，并在左侧为首页标题留出平静区域。",
+        "对比度比新奇更重要。请选择能让正文、项目名称、输入控件和焦点状态保持可见的图片。不要把包含完整界面的画廊合成预览当作壁纸，它们已经包含界面图像，不适合作为横幅素材。请使用自己拥有许可的图片或安装包自带的抽象示例。",
+        "Windows 当前附带粉色装饰主题。其文档没有宣称支持 Mac 的图片选择流程，因此本站不会把 Windows 自定义图片上传描述为现有功能。"
+      ],
+      "imageAlt": "Windows 上 Codex Dream Skin 内置设计预览",
+      "caption": "Windows 安装包预览。商业再分发前必须确认公开图片和人物形象相关权利。"
+    },
+    "troubleshooting": {
+      "title": "按可恢复顺序处理常见故障。",
+      "description": "先做可逆检查，保持官方 Codex 可用，并在报告问题时提供准确的应用、系统和 Dream Skin 版本。",
+      "items": [
+        {"title": "主题只显示了一部分", "body": "先运行 Verify。如果原生控件可用但装饰层不完整，请运行 Restore、下载当前可用的最新安装包、重新安装并再次验证。Codex 渲染结构变化会让旧选择器失效。"},
+        {"title": "Mac 提示缺少背景素材", "body": "项目更新记录显示 1.1.2 修正了内置主题引用。请下载当前安装包后重试，不要创建虚假的文件路径。"},
+        {"title": "Codex 配置看起来不正确", "body": "请停止操作并使用提供的 Restore 流程。项目会保存主题备份，近期更新也改善了配置的完整恢复。不要用无关模板覆盖 config.toml。"},
+        {"title": "Windows 效果与预览不同", "body": "内置预览是目标设计参考，不保证像素完全一致。请确认 Node.js 22 或更高版本，并分别验证首页和普通任务页面。"}
+      ]
+    },
+    "services": {
+      "title": "希望有人帮你准备颜色和图片？",
+      "description": "完整自助流程始终免费。如果你更希望直接获得清晰配色、整理好的配置和安装说明，可以选择一次性配置服务。费用只用于个性化与支持，不是购买开源软件。",
+      "prices": "Quick Setup $4.99 · Custom Skin Early Access $9.99",
+      "cta": "比较皮肤服务"
+    },
+    "safety": {
+      "title": "真正的安全取舍是本机 CDP 端口。",
+      "description": "Codex Dream Skin 将调试端口绑定到 127.0.0.1，因此不会暴露到你的网络。但 Chromium CDP 不验证本机进程，同一台电脑上的不可信软件仍可能尝试连接。只运行可信软件，使用 Verify 检查，并在不再需要主题会话时运行 Restore。"
+    },
+    "faqTitle": "Codex 皮肤常见问题",
+    "faqIntro": "安装 Codex 皮肤、更换 Codex 桌面主题或恢复官方界面前最常见问题的直接答案。",
+    "faq": [
+      {"question": "Codex Dream Skin 是 OpenAI 官方产品吗？", "answer": "不是。Codex Dream Skin 是独立的开源项目。它通过本机调试连接启动官方 Codex 桌面端，并注入视觉 CSS 和装饰元素，与 OpenAI 没有隶属或背书关系。"},
+      {"question": "这个 Codex 皮肤会修改 app.asar 或官方文件吗？", "answer": "项目文档说明它不会修改官方 .app 应用包、app.asar、WindowsApps 目录或代码签名。主题通过绑定到本机的 Chromium DevTools Protocol 连接在运行时应用。"},
+      {"question": "可以用自己的图片制作 Codex 桌面主题吗？", "answer": "macOS 可以。安装后使用 Customize 桌面入口或菜单栏控件选择本地图片。当前 Windows 安装包使用内置设计，暂不提供相同的图片选择器。"},
+      {"question": "怎样移除 Codex Dream Skin？", "answer": "使用安装器创建的 Restore 入口，或复制上方系统面板中的恢复命令。Restore 会停止注入器、关闭保存的本机调试会话、恢复备份的外观设置，并可正常重新打开 Codex。"},
+      {"question": "为什么 Codex 更新后主题失效？", "answer": "皮肤依赖 Codex Desktop 更新时可能变化的渲染结构。请运行 Restore、下载当前最新安装包、重新安装并使用 Verify。如果仍有问题，请保持官方外观，等待兼容的新主题包。"},
+      {"question": "Codex 皮肤与 Codex theme 是同一类需求吗？", "answer": "是。Codex 皮肤、Codex theme、Codex desktop theme 和 Codex Dream Skin 都用于描述改变 Codex Desktop 视觉层，同时保持原生控件可交互的目标。"},
+      {"question": "使用 Codex Dream Skin 必须付费吗？", "answer": "不需要。安装指南、下载、Codex Pets 画廊、宠物模板、教程、验证步骤和恢复指南均免费。可选的 $4.99 与 $9.99 服务只收取个人配色、图片位置、可读性检查、配置打包和支持费用。"}
+    ],
+    "checksum": {
+      "title": "核对镜像 ZIP，并保留 Restore 入口。",
+      "description": "本站镜像 ZIP 已于 2026 年 7 月 16 日检查压缩包完整性。下方提供 SHA-256，便于确认收到的是同一文件。校验和只能证明文件身份，不能证明绝对安全；请阅读系统要求，并且不要把 API Key、认证文件或私密截图放入主题包。",
+      "download": "下载 ZIP"
+    }
+  },
+  "PetPicker": {
+    "searchLabel": "搜索 53 个 Codex Pets",
+    "searchPlaceholder": "搜索猫、动漫、像素、作者或 slug",
+    "format": "格式",
+    "style": "风格",
+    "sort": "排序",
+    "all": "全部",
+    "allStyles": "全部风格",
+    "tags": {"cute": "可爱", "anime": "动漫", "pixel": "像素", "game": "游戏", "mascot": "吉祥物", "animated": "动画"},
+    "newest": "最新条目",
+    "nameSort": "按名称 A-Z",
+    "results": "正在显示 {visible} 个结果，共匹配 {filtered} 个；画廊共有 {total} 个公开 Pets。",
+    "by": "作者：{author}",
+    "communityPet": "社区宠物",
+    "showMore": "再显示 {count} 个 Pets",
+    "emptyTitle": "没有符合筛选条件的 Pets。",
+    "emptyBody": "清除搜索、格式和风格筛选，即可重新查看完整桌面宠物画廊。",
+    "showAll": "显示全部 Pets",
+    "selectedAria": "已选择的 Codex Pet 安装信息",
+    "selectedAlt": "已选择的桌面宠物 {name}",
+    "selectedMeta": "{format} · 作者 {author}",
+    "selectedBody": "此条目使用已发布的 slug：{slug}。下方链接会打开 Codex，并把准确安装命令放入待检查的任务中。",
+    "installPrompt": "安装这个 Pet：{command}",
+    "install": "在 Codex 中安装",
+    "terminal": "终端备用命令",
+    "copy": "复制 CLI 命令",
+    "review": "查看安装包详情"
+  },
+  "PetBuilder": {
+    "title": "怎样制作自己的 Codex Pet",
+    "intro": "从文档完整的 V1 安装包开始。V1 仍受支持，使用固定精灵图网格，可以避免猜测较新的方向格式。",
+    "starterTitle": "下载 V1 模板",
+    "starterBody": "ZIP 包含有效 manifest、1536 × 1872 透明 WebP 精灵图、九行动画顺序和发布说明。",
+    "starterCta": "下载模板 ZIP",
+    "starterNote": "空白精灵图是模板，不是完成的宠物。请替换为你创作或获准分发的图片。",
+    "steps": [
+      {"title": "在透明网格上绘制", "body": "每一帧都应放在 192 × 208 像素单元格内。完整精灵图宽 8 列、高 9 行。保持宠物居中，避免动画切换时位置跳动。"},
+      {"title": "按顺序放置九行动画", "body": "行顺序是格式的一部分。每行动画达到指定帧数后，其余单元格应保持透明。"},
+      {"title": "编辑 pet.json", "body": "id 只使用小写字母、数字和连字符。不要改变文件名和 spritesheet 路径。有效 kind 包括 object、animal、person 与 creature。"},
+      {"title": "验证、发布和安装", "body": "登录公开上传流程，选择 pet.json 与 spritesheet.webp，然后修复全部验证错误。slug 发布后，使用 npx codex-pets add 加该 slug 安装。"}
+    ],
+    "validator": "打开安装包验证器",
+    "rowMap": "精灵图行映射",
+    "row": "第 {number} 行",
+    "frames": "{count} 帧",
+    "animationRows": ["待机", "向右跑", "向左跑", "挥手", "跳跃", "失败", "等待", "运行中", "审查"],
+    "manifestTitle": "Manifest 模板",
+    "copyManifest": "复制 pet.json",
+    "validatorNote": "公开验证器会检查 manifest schema、允许的 kind、文件名、WebP 格式和准确的精灵图尺寸。"
+  },
+  "Pets": {
+    "headerCta": "浏览 53 个 Pets",
+    "hero": {
+      "eyebrow": "53 个免费 Codex 桌面宠物",
+      "title": "找到并安装你的 Codex Pet。",
+      "description": "浏览 53 个公开 Pets，打开准备好的 Codex 安装任务，或使用 V1 模板制作自己的宠物。",
+      "choose": "选择一个 Pet",
+      "make": "自己制作",
+      "previewAria": "Codex Pets 预览集合",
+      "imageAlts": ["菠菜奶油金色猫咪 Codex Pet", "MOJO Apple Codex Pet", "Aegis Sentinel Codex Pet"]
+    },
+    "how": {
+      "title": "怎样在 Codex 中获得桌面宠物",
+      "description": "网站只负责准备命令。只有在你检查后，Codex 或你信任的终端才会执行安装。",
+      "steps": [
+        {"title": "选择已发布的 slug", "body": "按名称、作者、格式或风格搜索画廊。选择卡片会更新安装面板中的准确安装包 slug。"},
+        {"title": "打开准备好的任务", "body": "“在 Codex 中安装”使用包含 npx codex-pets add 和选中 slug 的 codex:// 链接。页面不会在后台执行任何命令。"},
+        {"title": "批准前先检查", "body": "阅读命令和安装包详情。如果自定义链接没有打开，请把同一条 CLI 命令复制到可信终端。"}
+      ]
+    },
+    "gallery": {
+      "title": "浏览全部 53 个 Codex Pets",
+      "description": "按名称、创作者、风格或格式筛选公开的 V1 与 V2 条目。每张卡片都使用真实发布的 slug，并打开同一套可检查安装流程。",
+      "rights": "Pet 名称、图片和角色权利属于其创作者及相应权利人。本站展示预览副本用于发现安装包；请打开对应安装包详情查看来源背景和当前署名。"
+    },
+    "versions": {
+      "title": "安装时优先选择 V2，学习格式时从 V1 开始。",
+      "v2Title": "V2 画廊 Pets",
+      "v2Body": "画廊中的多数选择使用 V2。如果目标是快速安装已发布的桌面伙伴，可以选择 V2。批准准备好的命令前，始终检查所选 slug 与安装包详情。",
+      "v1Title": "V1 模板包",
+      "v1Body": "V1 使用上文说明的固定 1536 × 1872 精灵图，更适合学习单元格尺寸、动画行顺序、manifest 字段、验证和发布流程，无需猜测更新的方向格式。"
+    },
+    "definition": {
+      "title": "什么是 Codex 桌面宠物？",
+      "paragraphs": ["桌面宠物是一种显示在工作区附近的小型动画或插画伙伴，不会占据整个屏幕。Codex Pets 使用短安装 slug 打包宠物，并提供待机、移动、等待、审查等动作状态。", "宠物改变的是工作氛围，而不是生成代码的质量。请选择在小尺寸下仍然清晰、不遮挡控件，并且来源已经检查过的安装包。"]
+    },
+    "xGallery": {
+      "title": "X 上出现的 Codex Pet 灵感",
+      "description": "公开实验显示这个想法已经超出单一画廊：Pets 出现在编码会话旁、自定义宠物集合中，甚至手表大小的屏幕上。这些图片只是对已链接公开帖子的引用，不是本站托管的可下载安装包。",
+      "postedBy": "发布者：{handle}",
+      "view": "在 X 查看帖子",
+      "rights": "截图用于评论和发现，权利仍属于原创作者与平台用户。请打开对应帖子查看来源背景。",
+      "items": [
+        {"alt": "公开 X 帖子展示编码工作流中的 Codex Pets", "title": "真实工作流中的 Codex Pets"},
+        {"alt": "公开 X 帖子展示 Petdex 桌面宠物实验", "title": "Petdex 风格实验"},
+        {"alt": "公开 X 帖子展示 Codex 工作区旁的自定义宠物", "title": "自定义 Codex 桌面伙伴"},
+        {"alt": "公开 X 帖子展示社区 Codex Pet 中心界面", "title": "社区 Pet 中心"},
+        {"alt": "公开 X 帖子展示适配 Apple Watch 的 Codex Pets", "title": "Apple Watch 上的 Codex Pets"}
+      ]
+    },
+    "safety": {
+      "title": "桌面宠物安全吗？",
+      "description": "应把每个桌面宠物视为软件与视觉素材的组合。可爱的预览不等于安全审查，命令和安装包仍应像其他开发者工具一样检查。",
+      "items": ["批准前阅读准确的 npx 命令与所选 slug。", "使用来自可信来源的当前 Node.js 与 npm 环境。", "不要把 API Key、会话 Token 或私有项目文件粘贴进安装提示。", "需要当前安装包详情或创作者署名时，打开原始 Pet 条目。", "如果宠物产生异常行为、资源占用或遮挡界面，请移除或更换。"]
+    },
+    "faqTitle": "Codex Pets 常见问题",
+    "faqIntro": "直接回答安装、免费桌面宠物、安全性，以及点击一键链接后会发生什么。",
+    "faq": [
+      {"question": "Codex Pets 是什么？", "answer": "Codex Pets 是显示在 Codex 桌面端中的小型视觉伙伴。每个公开条目都有创作者、预览、格式和安装 slug。本页整理 53 个公开条目，并为你选择的 Pet 准备已发布的 npx 安装命令。"},
+      {"question": "怎样在 Codex 中安装桌面宠物？", "answer": "在画廊中选择 Pet，然后点击“在 Codex 中安装”。链接会打开新的 Codex 任务，其中包含 npx codex-pets add 加所选 slug 的命令。允许 Codex 运行前请检查任务与命令。如果自定义链接未打开，请复制终端备用命令。"},
+      {"question": "这些桌面宠物免费吗？", "answer": "所列 Pets 使用公开 Codex Pets 安装流程，页面没有显示购买价格。单独角色、图片和品牌权利仍属于各自权利人。免费访问安装包不代表获得商业再使用或重新分发权。"},
+      {"question": "桌面宠物安全吗？", "answer": "桌面宠物包含安装在电脑上的代码和素材，因此运行前应检查安装包来源、命令和权限。使用当前 Node.js 与 npm 环境，避免运行未知回复中的命令；如果行为或资源占用异常，请移除。"},
+      {"question": "需要上传图片或创建账号吗？", "answer": "不需要。这个整理画廊暂不接受上传，也不要求账号。选择 Pet 只会在浏览器中更新准备好的安装链接与 CLI 命令；只有打开 Codex 或在本机运行命令后才会安装。"},
+      {"question": "怎样制作自己的 Codex Pet？", "answer": "使用本页 V1 模板。用九行动画帧替换 1536 × 1872 透明 WebP 精灵图，编辑 pet.json，再登录公开上传流程验证并发布。V1 仍受支持，格式固定为 8 列 × 9 行。"}
+    ]
+  },
+  "Order": {
+    "success": {
+      "headerCta": "服务详情",
+      "eyebrow": "安全订单交接",
+      "title": "提交一份简短需求，然后开始准备配置。",
+      "description": "返回链接中的支付信息会直接通过 Creem 检查。你的源图片保存在私有存储中，不会加入公开画廊。",
+      "loading": "正在加载安全订单信息……"
+    },
+    "cancel": {
+      "headerCta": "服务详情",
+      "title": "付款没有完成。",
+      "description": "没有内容进入制作流程。免费安装器、画廊、教程和恢复指南仍然无需结账即可使用。",
+      "services": "查看服务",
+      "freeGuide": "使用免费指南"
+    },
+    "brief": {
+      "errors": {
+        "missingCheckout": "此链接中没有找到已完成的结账信息。",
+        "verification": "暂时无法确认付款。",
+        "submission": "需求暂时无法提交。"
+      },
+      "checkingTitle": "正在确认付款",
+      "checkingBody": "通常只需要几秒钟，请保持页面打开。",
+      "verificationTitle": "付款确认还需要一点时间",
+      "verificationFollowUp": "请在 15 秒后刷新页面。如果提示仍然存在，请使用联系页面并附上本页地址，以便安全核查订单。",
+      "completeTitle": "你的需求已进入制作队列。",
+      "completeBody": "参考号 {reference}。文件会在 72 小时内发送到结账所用邮箱，其中包含准备好的配置、安装说明和恢复说明。",
+      "paymentConfirmed": "付款已确认",
+      "orderMeta": "订单尾号 {reference} · 72 小时内交付",
+      "intro": "完成一份简短需求即可。结账邮箱已经与订单关联，无需创建账号，也不用复制订单号。",
+      "platform": "Codex 平台",
+      "visualDirection": "视觉方向",
+      "directions": {"soft": "柔和安静", "dark": "深色专注", "bright": "明亮活泼", "minimal": "极简", "surprise": "由我们选择"},
+      "accent": "偏好的强调色",
+      "optional": "（可选）",
+      "accentPlaceholder": "例如：森林绿、暖橙色或 #58CC02",
+      "customImage": "定制皮肤图片",
+      "backgroundImage": "背景图片（可选）",
+      "imageHelp": "支持不超过 15 MB 的 PNG、JPEG、WebP、HEIC 或 HEIF。文字背后留有平静区域的横图通常最清晰。",
+      "notes": "还有什么重要要求？",
+      "notesPlaceholder": "例如：输入框保持深色、避免粉色、主体放在右侧。",
+      "rights": "我创作了所上传图片，或已经获得使用许可。如果不上传图片，我只授权使用权利清晰或抽象的素材。",
+      "earlyAccess": "Early Access 包含一套定制皮肤且不含修改，也不包含原创插画或第三方角色许可。",
+      "submitting": "正在安全提交……",
+      "submit": "提交皮肤需求",
+      "delivery": "72 小时内交付"
+    }
+  },
+  "NotFound": {
+    "eyebrow": "页面不存在",
+    "title": "没有找到这个皮肤页面。",
+    "description": "返回安装页面，选择 macOS 或 Windows，复制当前命令并查看 Restore 恢复说明。",
+    "back": "返回中文安装页面"
+  }
+}

@@ -7,6 +7,7 @@ import {
   DownloadSimple,
   WindowsLogo,
 } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
 import { CopyCommand } from "@/components/copy-command";
 
@@ -41,10 +42,14 @@ function CommandBlock({ command }: { command: string }) {
 }
 
 export function InstallPanel() {
+  const t = useTranslations("InstallPanel");
+  const macRequirements = t.raw("mac.requirements") as string[];
+  const windowsRequirements = t.raw("windows.requirements") as string[];
+
   return (
     <Tabs.Root defaultValue="mac" className="grid min-w-0 gap-6">
       <Tabs.List
-        aria-label="Choose your operating system"
+        aria-label={t("platformLabel")}
         className="grid grid-cols-2 gap-3"
       >
         <Tabs.Trigger
@@ -67,28 +72,18 @@ export function InstallPanel() {
         <div className="grid min-w-0 gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
           <div className="min-w-0">
             <h3 className="text-balance text-3xl font-black text-eel-dark-blue">
-              Install Codex Dream Skin on Mac
+              {t("mac.title")}
             </h3>
             <p className="mt-4 text-pretty leading-7 text-charcoal">
-              Works with Apple Silicon and Intel Mac. Launch the official
-              Codex desktop app once before installing so its configuration
-              file exists. The Mac package validates and reuses Codex&apos;s
-              bundled Node runtime, so a global Node install is not required.
+              {t("mac.description")}
             </p>
             <ul className="mt-6 grid gap-3 text-sm font-bold text-charcoal">
-              <li className="flex gap-2.5">
-                <CheckCircle className="mt-0.5 size-5 shrink-0 text-action" weight="fill" />
-                Close Codex before running the installer.
-              </li>
-              <li className="flex gap-2.5">
-                <CheckCircle className="mt-0.5 size-5 shrink-0 text-action" weight="fill" />
-                The package is downloaded over HTTPS from this site.
-              </li>
-              <li className="flex gap-2.5">
-                <CheckCircle className="mt-0.5 size-5 shrink-0 text-action" weight="fill" />
-                Desktop launchers are created for start, customize, verify,
-                and restore.
-              </li>
+              {macRequirements.map((requirement) => (
+                <li key={requirement} className="flex gap-2.5">
+                  <CheckCircle className="mt-0.5 size-5 shrink-0 text-action" weight="fill" />
+                  {requirement}
+                </li>
+              ))}
             </ul>
             <a
               href="/downloads/codex-dream-skin-main.zip"
@@ -96,24 +91,30 @@ export function InstallPanel() {
               className="button-primary mt-7 inline-flex min-h-12 items-center justify-center gap-2 px-5 text-sm font-extrabold"
             >
               <DownloadSimple aria-hidden="true" className="size-5" weight="bold" />
-              Download ZIP
+              {t("download")}
             </a>
           </div>
           <div className="grid min-w-0 gap-4">
             <div className="min-w-0">
               <p className="mb-2 text-sm font-black text-eel-dark-blue">
-                Fast Terminal install
+                {t("mac.fastInstall")}
               </p>
               <CommandBlock command={macInstallCommand} />
             </div>
-            <CopyCommand command={macInstallCommand} label="Copy Mac install" />
+            <CopyCommand
+              command={macInstallCommand}
+              label={t("mac.copyInstall")}
+            />
             <details className="min-w-0 rounded-xl border-2 border-eel-light p-4">
               <summary className="cursor-pointer font-black text-eel-dark-blue">
-                Restore the official Codex appearance
+                {t("restore")}
               </summary>
               <div className="mt-4 grid min-w-0 gap-3">
                 <CommandBlock command={macRestoreCommand} />
-                <CopyCommand command={macRestoreCommand} label="Copy restore command" />
+                <CopyCommand
+                  command={macRestoreCommand}
+                  label={t("mac.copyRestore")}
+                />
               </div>
             </details>
           </div>
@@ -124,27 +125,18 @@ export function InstallPanel() {
         <div className="grid min-w-0 gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
           <div className="min-w-0">
             <h3 className="text-balance text-3xl font-black text-eel-dark-blue">
-              Install Codex Dream Skin on Windows
+              {t("windows.title")}
             </h3>
             <p className="mt-4 text-pretty leading-7 text-charcoal">
-              The Windows scripts target the official Microsoft Store Codex
-              package. Install Node.js 22 or newer, close Codex, then run the
-              install and start scripts. The current Windows build applies its
-              bundled design and does not yet provide the Mac image picker.
+              {t("windows.description")}
             </p>
             <ul className="mt-6 grid gap-3 text-sm font-bold text-charcoal">
-              <li className="flex gap-2.5">
-                <CheckCircle className="mt-0.5 size-5 shrink-0 text-action" weight="fill" />
-                Node.js 22 or newer is required.
-              </li>
-              <li className="flex gap-2.5">
-                <CheckCircle className="mt-0.5 size-5 shrink-0 text-action" weight="fill" />
-                Close every Codex window before installing.
-              </li>
-              <li className="flex gap-2.5">
-                <CheckCircle className="mt-0.5 size-5 shrink-0 text-action" weight="fill" />
-                The Store package identity is checked before launch.
-              </li>
+              {windowsRequirements.map((requirement) => (
+                <li key={requirement} className="flex gap-2.5">
+                  <CheckCircle className="mt-0.5 size-5 shrink-0 text-action" weight="fill" />
+                  {requirement}
+                </li>
+              ))}
             </ul>
             <a
               href="/downloads/codex-dream-skin-main.zip"
@@ -152,26 +144,29 @@ export function InstallPanel() {
               className="button-primary mt-7 inline-flex min-h-12 items-center justify-center gap-2 px-5 text-sm font-extrabold"
             >
               <DownloadSimple aria-hidden="true" className="size-5" weight="bold" />
-              Download ZIP
+              {t("download")}
             </a>
           </div>
           <div className="grid min-w-0 gap-4">
             <div className="min-w-0">
               <p className="mb-2 text-sm font-black text-eel-dark-blue">
-                PowerShell install
+                {t("windows.fastInstall")}
               </p>
               <CommandBlock command={windowsInstallCommand} />
             </div>
-            <CopyCommand command={windowsInstallCommand} label="Copy Windows install" />
+            <CopyCommand
+              command={windowsInstallCommand}
+              label={t("windows.copyInstall")}
+            />
             <details className="min-w-0 rounded-xl border-2 border-eel-light p-4">
               <summary className="cursor-pointer font-black text-eel-dark-blue">
-                Restore the official Codex appearance
+                {t("restore")}
               </summary>
               <div className="mt-4 grid min-w-0 gap-3">
                 <CommandBlock command={windowsRestoreCommand} />
                 <CopyCommand
                   command={windowsRestoreCommand}
-                  label="Copy restore command"
+                  label={t("windows.copyRestore")}
                 />
               </div>
             </details>
