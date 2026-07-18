@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">Codex Dream Skin</title>
+  <description id="description">A green Codex Dream Skin badge with a navy C and colorful skin swatches.</description>
+  <rect x="18" y="18" width="476" height="476" rx="116" fill="#D7FFB8" stroke="#3F9800" stroke-width="32"/>
+  <path d="M330 151c-21-19-49-29-81-29-72 0-125 55-125 134s53 134 125 134c33 0 62-11 83-31l-42-51c-11 10-24 15-40 15-34 0-57-27-57-67 0-41 23-67 57-67 15 0 29 5 40 15l40-53Z" fill="#042C60"/>
+  <circle cx="365" cy="205" r="27" fill="#A560E8" stroke="#042C60" stroke-width="12"/>
+  <circle cx="390" cy="276" r="22" fill="#FF9600" stroke="#042C60" stroke-width="12"/>
+  <path d="m364 335 10 25 25 10-25 10-10 25-10-25-25-10 25-10 10-25Z" fill="#FFD900" stroke="#042C60" stroke-linejoin="round" stroke-width="9"/>
+</svg>

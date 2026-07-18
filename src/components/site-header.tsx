@@ -1,4 +1,4 @@
-import { Palette } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -33,9 +33,15 @@ export function SiteHeader({ ctaHref, ctaLabel }: SiteHeaderProps) {
           aria-label={t("brandHome")}
           className="flex shrink-0 items-center gap-2 font-black text-eel-dark-blue"
         >
-          <span className="grid size-10 place-items-center rounded-xl border-2 border-action bg-eel-light">
-            <Palette aria-hidden="true" className="size-6" weight="fill" />
-          </span>
+          <Image
+            src="/brand-icon.svg"
+            width={40}
+            height={40}
+            alt=""
+            aria-hidden="true"
+            className="size-10"
+            priority
+          />
           <span className="hidden text-lg sm:inline">codex dream skin</span>
         </Link>
 
